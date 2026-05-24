@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs # Sangat penting agar bisa di-hosting di GitHub Pages (gh-pages)
+
+website:
+  title: "Jarian Permana - Conservation Portfolio"
+  site-url: "https://harimausum4tra.github.io/02_JPR_Portfolio_main/"
+  navbar:
+    background: "#ffffff" # Warna navbar putih bersih seperti ALA Labs
+    left:
+      - href: index.qmd
+        text: Home
+      - href: portfolio.qmd
+        text: Portfolio & Research
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/harimausum4tra
+      - icon: linkedin
+        href: https://linkedin.com/in/[username-linkedin]
+
+format:
+  html:
+    theme: 
+      - cosmo # Tema bawaan yang paling mendekati desain saintifik yang bersih
+      - styles.css
+    toc: true # Menampilkan Table of Contents di sebelah kanan artikel
+    code-fold: true # Memungkinkan pengunjung menyembunyikan/menampilkan kode R Anda

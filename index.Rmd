@@ -1,0 +1,70 @@
+---
+title: "Portfolio Konservasi & Analisis Data"
+author: "Jarian Permana"
+output:
+  html_document:
+    theme: flatly
+---
+
+::: hero-banner
+<h1>Mengubah Data Menjadi Aksi Konservasi</h1>
+
+<p class="lead">
+
+Portofolio digital Jarian Permana dalam menjelajahi biodiversitas melalui lensa data.
+
+</p>
+:::
+
+:::::: row
+::: col-md-4
+```         
+<div class="principle-box">
+  <h2>🔎 Transparansi Ilmiah</h2>
+  <p>Transparansi adalah kunci sains yang reproducible. Di sini saya mendokumentasikan setiap keputusan, metode, dan alur kerja secara terbuka – dari perencanaan, pengambilan data, analisis, hingga output akhir.</p>
+</div>
+```
+:::
+
+::: col-md-4
+```         
+<div class="principle-box">
+  <h2>🧪 Metode yang Kokoh</h2>
+  <p>Tidak ada metode yang sempurna. Saya menekankan pentingnya memahami kekuatan dan keterbatasan setiap analisis—dari model okupansi, Species Distribution Modeling (SDM), hingga analisis tutupan lahan—untuk hasil yang paling relevan dengan pertanyaan konservasi.</p>
+</div>
+```
+:::
+
+::: col-md-4
+```         
+<div class="principle-box">
+  <h2>🌏 Data untuk Semua</h2>
+  <p>Data paling berguna saat tersedia luas dan mudah digunakan. Saya percaya pada kekuatan berbagi *tools* dan wawasan untuk menjadikan data keanekaragaman hayati lebih terbuka dan bermanfaat bagi semua pihak.</p>
+</div>
+```
+:::
+::::::
+
+## Proyek Unggulan
+
+::::: project-gallery
+::: project-card
+```         
+<img src="images/orangutan_thumb.jpg" alt="Orangutan Habitat">
+<h3><a href="projects/project1_orangutan.html">Pemodelan Habitat Orangutan di Kalimantan</a></h3>
+<p>Memetakan kesesuaian habitat terkini dan masa depan menggunakan data kehadiran dari GBIF dan variabel lingkungan global.</p>
+```
+:::
+
+::: project-card
+```         
+<img src="images/deforest_thumb.jpg" alt="Deforestasi">
+<h3><a href="projects/project2_deforestation.html">Analisis Tren Deforestasi dengan Google Earth Engine & R</a></h3>
+<p>Mengkuantifikasi kehilangan tutupan pohon tahunan di Sumatera dan dampaknya terhadap fragmentasi habitat.</p>
+```
+:::
+:::::
+
+::: {#contact-banner}
+Mari berkolaborasi! Hubungi saya di: <a href="mailto:jarian.permana@email.com">jarian.permana\@email.com</a>
+:::

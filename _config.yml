@@ -1,0 +1,24 @@
+# Jekyll configuration for GitHub Pages
+title: Jarian Permana Portfolio
+description: Reproducible research for biodiversity and ecology
+url: https://harimausum4tra.github.io
+baseurl: /02_JPR_Portfolio_main/
+
+# Theme settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from build
+exclude:
+  - .gitignore
+  - README.md
+  - assets/data/raw/
+
+# Defaults
+defaults:
+  - scope:
+      path: "projects"
+    values:
+      layout: "project"
