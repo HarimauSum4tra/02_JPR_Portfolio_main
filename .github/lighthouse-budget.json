@@ -1,0 +1,29 @@
+{
+  "budgets": [
+    {
+      "resourceType": "document",
+      "metric": "first-contentful-paint",
+      "budget": 2000
+    },
+    {
+      "resourceType": "document",
+      "metric": "largest-contentful-paint",
+      "budget": 3000
+    },
+    {
+      "resourceType": "document",
+      "metric": "total-blocking-time",
+      "budget": 300
+    },
+    {
+      "resourceType": "document",
+      "metric": "cumulative-layout-shift",
+      "budget": 0.1
+    },
+    {
+      "resourceType": "total",
+      "metric": "interactive",
+      "budget": 5000
+    }
+  ]
+}

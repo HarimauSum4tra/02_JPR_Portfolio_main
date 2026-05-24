@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Jarian Permana - Conservation Portfolio"
-  site-url: "https://harimausum4tra.github.io/02_JPR_Portfolio_main/"
+  site-url: "https://HarimauSum4tra.github.io/02_JPR_Portfolio_main/"
   navbar:
     background: "#ffffff" # Warna navbar putih bersih seperti ALA Labs
     left:
@@ -16,9 +16,9 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/harimausum4tra
+        href: https://github.com/HarimauSum4tra
       - icon: linkedin
-        href: https://linkedin.com/in/[username-linkedin]
+        href: https://linkedin.com/in/jarianpermana
 
 format:
   html:

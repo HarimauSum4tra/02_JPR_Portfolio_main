@@ -17,9 +17,9 @@ navbar:
       href: about.html
   right:
     - icon: fa-github
-      href: https://github.com/usernameanda
+      href: https://github.com/HarimauSum4tra
     - icon: fa-linkedin
-      href: https://linkedin.com/in/usernameanda
+      href: https://linkedin.com/in/jarianpermana
 output:
   html_document:
     theme: flatly # Bisa diganti 'united', 'cosmo', 'journal', dll.

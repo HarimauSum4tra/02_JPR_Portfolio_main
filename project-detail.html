@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[PROJECT_TITLE] - Complete methodology, reproducible code, and interactive results">
+    <meta name="author" content="Jarian Permana">
+    <meta name="keywords" content="data science, ecology, R, Python, biodiversity, reproducible research">
+    
+    <!-- Open Graph / Social Media Metadata -->
+    <meta property="og:title" content="[PROJECT_TITLE] | Jarian Permana">
+    <meta property="og:description" content="[PROJECT_DESCRIPTION]">
+    <meta property="og:image" content="assets/images/[project-thumbnail].jpg">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@HarimauSum4tra">
+    
+    <title>[PROJECT_TITLE] | Jarian Permana - Data Science Portfolio</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Syntax Highlighting for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <style>
+        /* Project Detail Specific Styles */
+        .project-detail-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .project-detail-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-meta-item i {
+            font-size: 1.1rem;
+        }
+        
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            background: var(--white);
+            border-bottom: 2px solid var(--gray-200);
+            padding: 0 1rem;
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-light);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 3rem 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .method-card {
+            background: var(--bg-offwhite);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        
+        .limitation-card {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            color: #d4d4d4;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .download-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .btn-download:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-github {
+            background: #24292e;
+        }
+        
+        .btn-github:hover {
+            background: #0366d6;
+        }
+        
+        .citation-box {
+            background: var(--gray-100);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin: 1rem 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .project-detail-hero h1 { font-size: 1.8rem; }
+            .project-meta { gap: 1rem; }
+            .tab-btn { padding: 0.8rem 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+</div>
+
+<!-- Header -->
+<header>
+    <nav>
+        <div class="logo">
+            <a href="/index.html">🌿 Jarian Permana | Data & Ecology</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Projects</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="project-detail-hero">
+        <div class="container">
+            <h1>[PROJECT_TITLE]</h1>
+            <p>[PROJECT_SHORT_DESCRIPTION]</p>
+            <div class="project-meta">
+                <span class="project-meta-item"><i class="far fa-calendar-alt"></i> [PROJECT_DATE]</span>
+                <span class="project-meta-item"><i class="fas fa-code-branch"></i> Version [VERSION]</span>
+                <span class="project-meta-item"><i class="fas fa-chart-line"></i> [STATUS]</span>
+                <span class="project-meta-item"><i class="fas fa-globe"></i> [LICENSE]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Navigation -->
+    <div class="project-tabs">
+        <button class="tab-btn active" data-tab="overview">📋 Overview</button>
+        <button class="tab-btn" data-tab="methods">🔬 Methods</button>
+        <button class="tab-btn" data-tab="results">📊 Results</button>
+        <button class="tab-btn" data-tab="reproduce">🔄 Reproduce</button>
+        <button class="tab-btn" data-tab="citation">📖 Citation</button>
+    </div>
+
+    <div class="container">
+        <!-- Tab 1: Overview -->
+        <div id="overview" class="tab-content active">
+            <h2>Project Overview</h2>
+            <p>[PROJECT_DETAILED_DESCRIPTION]</p>
+            
+            <h3>🎯 Objectives</h3>
+            <ul>
+                <li>[OBJECTIVE_1]</li>
+                <li>[OBJECTIVE_2]</li>
+                <li>[OBJECTIVE_3]</li>
+            </ul>
+            
+            <h3>📦 Key Features</h3>
+            <ul>
+                <li><strong>Data Source:</strong> [DATA_SOURCE]</li>
+                <li><strong>Temporal Coverage:</strong> [DATE_RANGE]</li>
+                <li><strong>Spatial Coverage:</strong> [SPATIAL_RANGE]</li>
+                <li><strong>Sample Size:</strong> [SAMPLE_SIZE] records</li>
+            </ul>
+            
+            <div class="download-links">
+                <a href="#" class="btn-download"><i class="fas fa-chart-line"></i> Interactive Dashboard</a>
+                <a href="#" class="btn-download btn-github"><i class="fab fa-github"></i> View Source Code</a>
+                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download Report (PDF)</a>
+            </div>
+        </div>
+
+        <!-- Tab 2: Methods -->
+        <div id="methods" class="tab-content">
+            <h2>Methodology</h2>
+            <p>This project follows the principles of <strong>reproducible research</strong> and <strong>transparent science</strong> as advocated by ALA Labs.</p>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-database"></i> Data Acquisition</h3>
+                <p>[DATA_ACQUISITION_METHOD]</p>
+                <code>Data accessed on [ACCESS_DATE] via [API/Download]</code>
+            </div>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-filter"></i> Data Processing</h3>
+                <p>[DATA_PROCESSING_STEPS]</p>
+                <ul>
+                    <li>Step 1: [STEP_1]</li>
+                    <li>Step 2: [STEP_2]</li>
+                    <li>Step 3: [STEP_3]</li>
+                </ul>
+            </div>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-chart-line"></i> Analytical Framework</h3>
+                <p>[ANALYTICAL_METHOD]</p>
+                <div class="code-block">
+                    <pre><code class="language-r">
+# Example R code for reproducibility
+library(tidyverse)
+library(ALA4R)
+
+# Download occurrence data
+occurrences <- occurrences(taxon = "[SPECIES_NAME]",
+                          download_reason_id = "testing")
+                          
+# Data cleaning workflow
+cleaned_data <- occurrences %>%
+    filter(!is.na(longitude), !is.na(latitude)) %>%
+    distinct(occurrenceID, .keep_all = TRUE)
+                    </code></pre>
+                </div>
+            </div>
+            
+            <h3>✅ Strengths</h3>
+            <ul>
+                <li>[STRENGTH_1]</li>
+                <li>[STRENGTH_2]</li>
+            </ul>
+            
+            <div class="limitation-card">
+                <h3><i class="fas fa-exclamation-triangle"></i> Limitations & Caveats</h3>
+                <ul>
+                    <li>[LIMITATION_1]</li>
+                    <li>[LIMITATION_2]</li>
+                    <li>[LIMITATION_3]</li>
+                </ul>
+                <p><strong>Mitigation:</strong> [MITIGATION_STRATEGY]</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Results -->
+        <div id="results" class="tab-content">
+            <h2>Key Findings</h2>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-chart-bar"></i> Result 1: [RESULT_TITLE_1]</h3>
+                <p>[RESULT_DESCRIPTION_1]</p>
+                <img src="/assets/images/[result-image-1].jpg" alt="Result visualization 1" style="width:100%; border-radius:8px; margin:1rem 0;">
+            </div>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-chart-line"></i> Result 2: [RESULT_TITLE_2]</h3>
+                <p>[RESULT_DESCRIPTION_2]</p>
+                <img src="/assets/images/[result-image-2].jpg" alt="Result visualization 2" style="width:100%; border-radius:8px; margin:1rem 0;">
+            </div>
+            
+            <h3>📊 Statistical Summary</h3>
+            <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead style="background: var(--primary); color: white;">
+                    <tr>
+                        <th style="padding: 0.75rem; text-align: left;">Metric</th>
+                        <th style="padding: 0.75rem; text-align: left;">Value</th>
+                        <th style="padding: 0.75rem; text-align: left;">95% CI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--gray-300);">
+                        <td style="padding: 0.75rem;">[METRIC_1]</td>
+                        <td style="padding: 0.75rem;">[VALUE_1]</td>
+                        <td style="padding: 0.75rem;">[CI_1]</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gray-300);">
+                        <td style="padding: 0.75rem;">[METRIC_2]</td>
+                        <td style="padding: 0.75rem;">[VALUE_2]</td>
+                        <td style="padding: 0.75rem;">[CI_2]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab 4: Reproduce -->
+        <div id="reproduce" class="tab-content">
+            <h2>Reproduce This Analysis</h2>
+            <p>This project is 100% reproducible. Follow the instructions below to replicate all analyses.</p>
+            
+            <h3>📦 System Requirements</h3>
+            <ul>
+                <li>R version >= 4.2.0 or Python >= 3.9</li>
+                <li>Required packages: [PACKAGES_LIST]</li>
+                <li>Internet connection for data download</li>
+            </ul>
+            
+            <h3>🔧 Step-by-Step Reproduction</h3>
+            <div class="code-block">
+                <pre><code class="language-bash">
+# Step 1: Clone the repository
+git clone https://github.com/HarimauSum4tra/[PROJECT_REPO].git
+cd [PROJECT_REPO]
+
+# Step 2: Set up R environment (using renv)
+Rscript -e "install.packages('renv')"
+Rscript -e "renv::restore()"
+
+# Step 3: Run the analysis
+Rscript scripts/01_download_data.R
+Rscript scripts/02_clean_data.R
+Rscript scripts/03_analysis.R
+Rscript scripts/04_visualisation.R
+
+# Step 4: Generate report
+Rscript -e "rmarkdown::render('report.Rmd')"
+                </code></pre>
+            </div>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-box"></i> Docker Container (Alternative)</h3>
+                <div class="code-block">
+                    <pre><code class="language-bash">
+# Pull the Docker image
+docker pull [username]/[project]:latest
+
+# Run the container
+docker run -v $(pwd):/workspace [username]/[project]:latest
+                    </code></pre>
+                </div>
+            </div>
+            
+            <h3>📂 Repository Structure</h3>
+            <div class="code-block">
+                <pre><code class="language-plaintext">
+[PROJECT_NAME]/
+├── data/
+│   ├── raw/           # Raw data (gitignored)
+│   └── processed/     # Cleaned data
+├── scripts/           # Analysis scripts
+├── output/            # Figures and tables
+├── report.Rmd         # Main report
+├── renv.lock          # Package versions
+└── README.md          # Documentation
+                </code></pre>
+            </div>
+            
+            <a href="#" class="btn-download btn-github" style="margin-top: 1rem;">
+                <i class="fab fa-github"></i> Full Repository on GitHub
+            </a>
+        </div>
+
+        <!-- Tab 5: Citation -->
+        <div id="citation" class="tab-content">
+            <h2>Cite This Work</h2>
+            <p>If you use this project in your research, please cite:</p>
+            
+            <div class="citation-box">
+                <strong>APA Style:</strong><br>
+                Permana, J. ([YEAR]). <em>[PROJECT_TITLE]</em> (Version [VERSION]) [Computer software]. GitHub. 
+                https://github.com/HarimauSum4tra/[PROJECT_REPO]
+            </div>
+            
+            <div class="citation-box">
+                <strong>BibTeX:</strong>
+                <pre style="background: transparent; margin: 0.5rem 0; overflow-x: auto;">@misc{permana_[YEAR]_[PROJECT_NAME],
+  author = {Jarian Permana},
+  title = {[PROJECT_TITLE]},
+  year = {[YEAR]},
+  publisher = {GitHub},
+  url = {https://github.com/HarimauSum4tra/[PROJECT_REPO]},
+  doi = {[DOI_NUMBER]}
+}</pre>
+            </div>
+            
+            <div class="citation-box">
+                <strong>RIS Format:</strong>
+                <pre style="background: transparent; margin: 0.5rem 0; overflow-x: auto;">TY  - DATA
+AU  - Permana, Jarian
+PY  - [YEAR]
+DA  - [DATE]
+TI  - [PROJECT_TITLE]
+UR  - https://github.com/HarimauSum4tra/[PROJECT_REPO]
+ER  -</pre>
+            </div>
+            
+            <div class="method-card">
+                <h3><i class="fas fa-hand-peace"></i> License & Acknowledgment</h3>
+                <p>This project is released under the <strong>MIT License</strong>. Data sources are acknowledged in the methods section.</p>
+                <p><em>Inspired by ALA Labs and their commitment to open science.</em></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🌿 Jarian Permana</h4>
+            <p>Data Scientist & Ecologist</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/index.html">Projects</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+                <a href="https://github.com/HarimauSum4tra" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-orcid"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Jarian Permana — Built with ❤️ for open science | Inspired by ALA Labs</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/main.js"></script>
+<script src="/js/dark-mode.js"></script>
+<script>
+    // Tab switching functionality
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update active tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
