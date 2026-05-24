@@ -1,0 +1,53 @@
+
+## 🛠️ Teknologi
+- HTML5, CSS3, JavaScript (Vanilla)
+- Font Awesome 6 (ikon)
+- Google Fonts (Inter)
+- GitHub Pages (hosting)
+
+## 📝 Yang Perlu Anda Lengkapi
+
+### 1. **Gambar & Aset Visual** (letakkan di `assets/images/`)
+
+| File | Deskripsi | Ukuran Rekomendasi | Source |
+|------|-----------|-------------------|--------|
+| `profile.jpg` | Foto profil untuk about page | 400x400 px | Foto sendiri |
+| `hero-bg.jpg` | Background hero section (opsional) | 1920x1080 px | Unsplash/CC0 |
+| `project-thumb-1.jpg` | Thumbnail biodiversity dashboard | 800x500 px | Screenshot dashboard Anda |
+| `project-thumb-2.jpg` | Thumbnail species modelling | 800x500 px | Output peta SDM |
+| `project-thumb-3.jpg` | Thumbnail GBIF analysis | 800x500 px | Screenshot ggplot |
+| `project-thumb-4.jpg` | Thumbnail conservation app | 800x500 px | Screenshot Shiny app |
+| `project-thumb-5.jpg` | Thumbnail climate analysis | 800x500 px | Screenshot time series |
+| `icon-reproducible.svg` | Ikon reproducible | 64x64 px | Dapat dari Font Awesome atau buat sendiri |
+| `icon-transparent.svg` | Ikon transparansi | 64x64 px | - |
+| `icon-robust.svg` | Ikon robust methods | 64x64 px | - |
+| `blog-ala4r.jpg` | Gambar tutorial ALA4R | 1200x630 px | Screenshot code/RStudio |
+| `blog-reproducible.jpg` | Gambar reproducible workflows | 1200x630 px | Diagram workflow |
+| `blog-sdm.jpg` | Gambar SDM comparison | 1200x630 px | Output perbandingan model |
+| `blog-shiny.jpg` | Gambar Shiny tutorial | 1200x630 px | Screenshot Shiny app |
+
+### 2. **Dokumen PDF** (letakkan di `assets/docs/`)
+
+| File | Deskripsi | Cara Membuat |
+|------|-----------|---------------|
+| `cv.pdf` | CV lengkap (2-4 halaman) | Export dari Word/LaTeX/Google Docs |
+| `methods-template.docx` | Template metode transparan | Saya bisa berikan template |
+| `ethical-guidelines.pdf` | Panduan etika data | Adaptasi dari ALA/GBIF |
+
+### 3. **Video Demonstrasi** (letakkan di `assets/videos/`)
+
+| File | Deskripsi | Durasi | Cara Membuat |
+|------|-----------|--------|---------------|
+| `dashboard-demo.mp4` | Demo interaksi dashboard | 1-2 menit | OBS Studio + screencast |
+| `methods-explanation.mp4` | Penjelasan metode | 3-5 menit | Zoom/Google Meet recording |
+
+### 4. **Data Contoh** (letakkan di `assets/data/`)
+
+| File | Deskripsi | Format |
+|------|-----------|--------|
+| `sample-biodiversity.csv` | 100 baris data contoh | CSV |
+| `metadata.json` | Deskripsi dataset | JSON |
+
+### 5. **Proyek Individual** (folder `projects/`)
+
+Untuk setiap proyek, buat struktur:

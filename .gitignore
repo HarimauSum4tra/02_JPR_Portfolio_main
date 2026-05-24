@@ -1,0 +1,43 @@
+
+---
+
+### 12. `.gitignore`
+
+```gitignore
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/
+renv/.renv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Portfolio specific (optional)
+assets/videos/*.mp4  # uncomment if video files are large
+assets/docs/*.pdf     # uncomment if PDFs are private
+.positai

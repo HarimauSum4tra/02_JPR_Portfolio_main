@@ -1,0 +1,28 @@
+name: "conservation-portfolio"
+output_dir: "docs" # WAJIB untuk GitHub Pages
+navbar:
+  title: "Jarian Permana"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Projects"
+      menu:
+        - text: "Orangutan Habitat Modeling"
+          href: projects/project1_orangutan.html
+        - text: "Deforestation Trend Analysis"
+          href: projects/project2_deforestation.html
+        - text: "Camera Trap Biodiversity Index"
+          href: projects/project3_camera_trap.html
+    - text: "About Me"
+      href: about.html
+  right:
+    - icon: fa-github
+      href: https://github.com/usernameanda
+    - icon: fa-linkedin
+      href: https://linkedin.com/in/usernameanda
+output:
+  html_document:
+    theme: flatly # Bisa diganti 'united', 'cosmo', 'journal', dll.
+    css: css/custom.css
+    includes:
+      after_body: footer.html # Untuk footer kustom
