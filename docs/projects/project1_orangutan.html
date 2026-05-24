@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jarian Permana">
 
-<title>Portfolio Konservasi &amp; Analisis Data – Jarian Permana - Conservation Portfolio</title>
+<title>Pemodelan Habitat Orangutan (Pongo pygmaeus) di Kalimantan – Jarian Permana - Conservation Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7fa3835c36a4957375ea2889b9a3f721.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7fa3835c36a4957375ea2889b9a3f721.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Jarian Permana - Conservation Portfolio</span>
     </a>
   </div>
@@ -93,15 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd"> 
+    <a class="nav-link" href="../index.qmd"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./portfolio.qmd"> 
+    <a class="nav-link" href="../portfolio.qmd"> 
 <span class="menu-text">Portfolio &amp; Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.qmd"> 
+    <a class="nav-link" href="../about.qmd"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -132,7 +131,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#proyek-unggulan" id="toc-proyek-unggulan" class="nav-link active" data-scroll-target="#proyek-unggulan">Proyek Unggulan</a></li>
+  <li><a href="#latar-belakang-pertanyaan-penelitian" id="toc-latar-belakang-pertanyaan-penelitian" class="nav-link active" data-scroll-target="#latar-belakang-pertanyaan-penelitian">1. Latar Belakang &amp; Pertanyaan Penelitian</a></li>
+  <li><a href="#data-metode" id="toc-data-metode" class="nav-link" data-scroll-target="#data-metode">2. Data &amp; Metode</a></li>
+  <li><a href="#alur-kerja-workflow-transparansi" id="toc-alur-kerja-workflow-transparansi" class="nav-link" data-scroll-target="#alur-kerja-workflow-transparansi">3. Alur Kerja (Workflow) &amp; Transparansi</a></li>
   </ul>
 </nav>
     </div>
@@ -141,19 +142,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Portfolio Konservasi &amp; Analisis Data</h1>
+<h1 class="title">Pemodelan Habitat Orangutan (Pongo pygmaeus) di Kalimantan</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jarian Permana </p>
-          </div>
-  </div>
     
   
     
@@ -164,51 +159,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="hero-banner">
-<h1>
-Mengubah Data Menjadi Aksi Konservasi
-</h1>
-<p class="lead">
-</p><p>Portofolio digital Jarian Permana dalam menjelajahi biodiversitas melalui lensa data.</p>
-<p></p>
+<style>
+  /* Gaya khusus halaman proyek */
+  .summary-box {
+    background: #e8f4f8;
+    border-left: 5px solid #2980b9;
+    padding: 15px;
+    margin: 20px 0;
+  }
+</style>
+<div class="summary-box">
+<p><strong>Ringkasan:</strong> Proyek ini bertujuan mengidentifikasi area habitat yang sesuai bagi Orangutan Kalimantan (<em>Pongo pygmaeus</em>) di lanskap yang terfragmentasi, menggunakan data kehadiran dari ALA/GBIF dan variabel lingkungan. Model MaxEnt digunakan untuk memproyeksikan kesesuaian habitat pada skenario iklim saat ini dan masa depan (RCP 6.0, 2050).</p>
 </div>
-<div class="row">
-<div class="col-md-4">
-<pre><code>&lt;div class="principle-box"&gt;
-  &lt;h2&gt;🔎 Transparansi Ilmiah&lt;/h2&gt;
-  &lt;p&gt;Transparansi adalah kunci sains yang reproducible. Di sini saya mendokumentasikan setiap keputusan, metode, dan alur kerja secara terbuka – dari perencanaan, pengambilan data, analisis, hingga output akhir.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<div class="col-md-4">
-<pre><code>&lt;div class="principle-box"&gt;
-  &lt;h2&gt;🧪 Metode yang Kokoh&lt;/h2&gt;
-  &lt;p&gt;Tidak ada metode yang sempurna. Saya menekankan pentingnya memahami kekuatan dan keterbatasan setiap analisis—dari model okupansi, Species Distribution Modeling (SDM), hingga analisis tutupan lahan—untuk hasil yang paling relevan dengan pertanyaan konservasi.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<div class="col-md-4">
-<pre><code>&lt;div class="principle-box"&gt;
-  &lt;h2&gt;🌏 Data untuk Semua&lt;/h2&gt;
-  &lt;p&gt;Data paling berguna saat tersedia luas dan mudah digunakan. Saya percaya pada kekuatan berbagi *tools* dan wawasan untuk menjadikan data keanekaragaman hayati lebih terbuka dan bermanfaat bagi semua pihak.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<section id="proyek-unggulan" class="level2">
-<h2 class="anchored" data-anchor-id="proyek-unggulan">Proyek Unggulan</h2>
-<div class="project-gallery">
-<div class="project-card">
-<pre><code>&lt;img src="images/orangutan_thumb.jpg" alt="Orangutan Habitat"&gt;
-&lt;h3&gt;&lt;a href="projects/project1_orangutan.html"&gt;Pemodelan Habitat Orangutan di Kalimantan&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Memetakan kesesuaian habitat terkini dan masa depan menggunakan data kehadiran dari GBIF dan variabel lingkungan global.&lt;/p&gt;</code></pre>
-</div>
-<div class="project-card">
-<pre><code>&lt;img src="images/deforest_thumb.jpg" alt="Deforestasi"&gt;
-&lt;h3&gt;&lt;a href="projects/project2_deforestation.html"&gt;Analisis Tren Deforestasi dengan Google Earth Engine &amp; R&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Mengkuantifikasi kehilangan tutupan pohon tahunan di Sumatera dan dampaknya terhadap fragmentasi habitat.&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div id="contact-banner">
-<p>Mari berkolaborasi! Hubungi saya di: <a href="mailto:jarian.permana@email.com">jarian.permana@email.com</a></p>
-</div>
+<section id="latar-belakang-pertanyaan-penelitian" class="level2">
+<h2 class="anchored" data-anchor-id="latar-belakang-pertanyaan-penelitian">1. Latar Belakang &amp; Pertanyaan Penelitian</h2>
+<p>Orangutan Kalimantan terancam oleh hilangnya habitat akibat deforestasi. Perencanaan konservasi membutuhkan informasi spasial akurat tentang area prioritas. Pertanyaan utama: Di manakah habitat yang paling sesuai dan bagaimana perubahannya di bawah tekanan perubahan iklim?</p>
+</section>
+<section id="data-metode" class="level2">
+<h2 class="anchored" data-anchor-id="data-metode">2. Data &amp; Metode</h2>
+<p><strong>Data:</strong> Titik kehadiran dari <em>Atlas of Living Australia</em> (melalui <code>galah</code> package) dan GBIF. Variabel lingkungan dari WorldClim. <strong>Metode Analisis:</strong> Menggunakan algoritma Maximum Entropy (MaxEnt) via package <code>dismo</code> di R. <strong>Validasi:</strong> AUC (Area Under Curve) dan TSS (True Skill Statistic).</p>
+</section>
+<section id="alur-kerja-workflow-transparansi" class="level2">
+<h2 class="anchored" data-anchor-id="alur-kerja-workflow-transparansi">3. Alur Kerja (Workflow) &amp; Transparansi</h2>
+<p>Seluruh kode R terdokumentasi. Alur kerjanya meliputi: 1. Pembersihan dan penipisan data spasial titik (mengurangi autokorelasi). 2. Seleksi variabel lingkungan (VIF, korelasi Pearson). 3. Running model dengan 5-fold cross-validation. 4. Proyeksi ke skenario iklim masa depan.</p>
+<p>Berikut cuplikan kode utama untuk mengunduh data dari ALA: ```r library(galah) # Konfigurasi awal galah_config(email = “your_email@example.com”) # Cari taksonomi search_taxa(“Pongo pygmaeus”) # Unduh data orangutan_data &lt;- galah_call() |&gt; identify(“Pongo pygmaeus”) |&gt; filter(year &gt; 2000) |&gt; select(record) |&gt; collect()</p>
 
 
 </section>

@@ -41,3 +41,6 @@ Thumbs.db
 assets/videos/*.mp4  # uncomment if video files are large
 assets/docs/*.pdf     # uncomment if PDFs are private
 .positai
+
+/.quarto/
+**/*.quarto_ipynb
