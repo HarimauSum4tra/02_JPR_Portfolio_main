@@ -1,0 +1,15 @@
+{
+  "hash": "0969d0746b4f0a54d5adcd12af70b67c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Pemodelan Habitat Orangutan (Pongo pygmaeus) di Kalimantan\"\noutput:\n  html_document:\n    theme: flatly\n    toc: true\n    toc_float: true\n---\n\n<style>\n  /* Gaya khusus halaman proyek */\n  .summary-box {\n    background: #e8f4f8;\n    border-left: 5px solid #2980b9;\n    padding: 15px;\n    margin: 20px 0;\n  }\n</style>\n\n<div class=\"summary-box\">\n  <strong>Ringkasan:</strong> Proyek ini bertujuan mengidentifikasi area habitat yang sesuai bagi Orangutan Kalimantan (*Pongo pygmaeus*) di lanskap yang terfragmentasi, menggunakan data kehadiran dari ALA/GBIF dan variabel lingkungan. Model MaxEnt digunakan untuk memproyeksikan kesesuaian habitat pada skenario iklim saat ini dan masa depan (RCP 6.0, 2050).\n</div>\n\n## 1. Latar Belakang & Pertanyaan Penelitian\nOrangutan Kalimantan terancam oleh hilangnya habitat akibat deforestasi. Perencanaan konservasi membutuhkan informasi spasial akurat tentang area prioritas. Pertanyaan utama: Di manakah habitat yang paling sesuai dan bagaimana perubahannya di bawah tekanan perubahan iklim?\n\n## 2. Data & Metode\n**Data:** Titik kehadiran dari *Atlas of Living Australia* (melalui `galah` package) dan GBIF. Variabel lingkungan dari WorldClim.\n**Metode Analisis:** Menggunakan algoritma Maximum Entropy (MaxEnt) via package `dismo` di R.\n**Validasi:** AUC (Area Under Curve) dan TSS (True Skill Statistic).\n\n## 3. Alur Kerja (Workflow) & Transparansi\nSeluruh kode R terdokumentasi. Alur kerjanya meliputi:\n1.  Pembersihan dan penipisan data spasial titik (mengurangi autokorelasi).\n2.  Seleksi variabel lingkungan (VIF, korelasi Pearson).\n3.  Running model dengan 5-fold cross-validation.\n4.  Proyeksi ke skenario iklim masa depan.\n\nBerikut cuplikan kode utama untuk mengunduh data dari ALA:\n```r\nlibrary(galah)\n# Konfigurasi awal\ngalah_config(email = \"your_email@example.com\")\n# Cari taksonomi\nsearch_taxa(\"Pongo pygmaeus\")\n# Unduh data\norangutan_data <- galah_call() |>\n  identify(\"Pongo pygmaeus\") |>\n  filter(year > 2000) |>\n  select(record) |>\n  collect()",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

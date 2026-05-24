@@ -1,0 +1,15 @@
+{
+  "hash": "95279713ca3a004aaeab5bef72f62018",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Portfolio Konservasi & Analisis Data\"\nauthor: \"Jarian Permana\"\noutput:\n  html_document:\n    theme: flatly\n---\n\n::: hero-banner\n<h1>Mengubah Data Menjadi Aksi Konservasi</h1>\n\n<p class=\"lead\">\n\nPortofolio digital Jarian Permana dalam menjelajahi biodiversitas melalui lensa data.\n\n</p>\n:::\n\n:::::: row\n::: col-md-4\n```         \n<div class=\"principle-box\">\n  <h2>🔎 Transparansi Ilmiah</h2>\n  <p>Transparansi adalah kunci sains yang reproducible. Di sini saya mendokumentasikan setiap keputusan, metode, dan alur kerja secara terbuka – dari perencanaan, pengambilan data, analisis, hingga output akhir.</p>\n</div>\n```\n:::\n\n::: col-md-4\n```         \n<div class=\"principle-box\">\n  <h2>🧪 Metode yang Kokoh</h2>\n  <p>Tidak ada metode yang sempurna. Saya menekankan pentingnya memahami kekuatan dan keterbatasan setiap analisis—dari model okupansi, Species Distribution Modeling (SDM), hingga analisis tutupan lahan—untuk hasil yang paling relevan dengan pertanyaan konservasi.</p>\n</div>\n```\n:::\n\n::: col-md-4\n```         \n<div class=\"principle-box\">\n  <h2>🌏 Data untuk Semua</h2>\n  <p>Data paling berguna saat tersedia luas dan mudah digunakan. Saya percaya pada kekuatan berbagi *tools* dan wawasan untuk menjadikan data keanekaragaman hayati lebih terbuka dan bermanfaat bagi semua pihak.</p>\n</div>\n```\n:::\n::::::\n\n## Proyek Unggulan\n\n::::: project-gallery\n::: project-card\n```         \n<img src=\"images/orangutan_thumb.jpg\" alt=\"Orangutan Habitat\">\n<h3><a href=\"projects/project1_orangutan.html\">Pemodelan Habitat Orangutan di Kalimantan</a></h3>\n<p>Memetakan kesesuaian habitat terkini dan masa depan menggunakan data kehadiran dari GBIF dan variabel lingkungan global.</p>\n```\n:::\n\n::: project-card\n```         \n<img src=\"images/deforest_thumb.jpg\" alt=\"Deforestasi\">\n<h3><a href=\"projects/project2_deforestation.html\">Analisis Tren Deforestasi dengan Google Earth Engine & R</a></h3>\n<p>Mengkuantifikasi kehilangan tutupan pohon tahunan di Sumatera dan dampaknya terhadap fragmentasi habitat.</p>\n```\n:::\n:::::\n\n::: {#contact-banner}\nMari berkolaborasi! Hubungi saya di: <a href=\"mailto:jarian.permana@email.com\">jarian.permana\\@email.com</a>\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
