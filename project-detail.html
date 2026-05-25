@@ -3,520 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[PROJECT_TITLE] - Complete methodology, reproducible code, and interactive results">
-    <meta name="author" content="Jarian Permana">
-    <meta name="keywords" content="data science, ecology, R, Python, biodiversity, reproducible research">
-    
-    <!-- Open Graph / Social Media Metadata -->
-    <meta property="og:title" content="[PROJECT_TITLE] | Jarian Permana">
-    <meta property="og:description" content="[PROJECT_DESCRIPTION]">
-    <meta property="og:image" content="assets/images/[project-thumbnail].jpg">
-    <meta property="og:type" content="article">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@HarimauSum4tra">
-    
-    <title>[PROJECT_TITLE] | Jarian Permana - Data Science Portfolio</title>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <title>Jarian Permana | Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Syntax Highlighting for Code Blocks -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    
     <style>
-        /* Project Detail Specific Styles */
-        .project-detail-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.5;
+        }
+        body.dark {
+            background-color: #0f1724;
+            color: #eef2ff;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
         }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; }
         
-        .project-detail-hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-meta {
-            display: flex;
-            justify-content: center;
+        /* Project Cards Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin: 3rem 0;
         }
-        
-        .project-meta-item {
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        body.dark .project-card {
+            background: #1e293b;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .card-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2d6a4f, #1b4332);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .project-meta-item i {
-            font-size: 1.1rem;
-        }
-        
-        .project-tabs {
-            display: flex;
             justify-content: center;
-            gap: 1rem;
-            background: var(--white);
-            border-bottom: 2px solid var(--gray-200);
-            padding: 0 1rem;
+            font-size: 4rem;
         }
-        
-        .tab-btn {
-            padding: 1rem 2rem;
-            background: none;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: var(--text-light);
-        }
-        
-        .tab-btn.active {
-            color: var(--primary);
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        .tab-content {
-            display: none;
-            padding: 3rem 0;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .method-card {
-            background: var(--bg-offwhite);
-            border-left: 4px solid var(--primary);
+        .card-content {
             padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
         }
-        
-        .limitation-card {
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
         }
-        
-        .code-block {
-            background: #1e1e1e;
-            padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-        
-        .code-block pre {
-            margin: 0;
-            color: #d4d4d4;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-        }
-        
-        .download-links {
+        .card-tags {
             display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            gap: 0.5rem;
+            margin: 1rem 0;
         }
-        
-        .btn-download {
+        .card-tags span {
+            background: #e9ecef;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        body.dark .card-tags span {
+            background: #334155;
+            color: #e2e8f0;
+        }
+        .github-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.2rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-        
-        .btn-download:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-github {
-            background: #24292e;
-        }
-        
-        .btn-github:hover {
-            background: #0366d6;
-        }
-        
-        .citation-box {
-            background: var(--gray-100);
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            margin: 1rem 0;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            gap: 6px;
+            color: #2c7a4d;
+            font-size: 0.85rem;
+            margin-top: 1rem;
         }
         
         @media (max-width: 768px) {
-            .project-detail-hero h1 { font-size: 1.8rem; }
-            .project-meta { gap: 1rem; }
-            .tab-btn { padding: 0.8rem 1rem; font-size: 0.8rem; }
+            .hero h1 { font-size: 2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <div class="dark-mode-toggle" id="darkModeToggle" style="position: fixed; top: 1.2rem; right: 1.8rem; background: #f1f5f9; border-radius: 40px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000;">
+        <i class="fas fa-moon"></i>
+    </div>
 
-<!-- Dark Mode Toggle -->
-<div class="dark-mode-toggle">
-    <i class="fas fa-moon"></i>
-</div>
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto;">
+            <div class="logo"><a href="index.html" style="font-weight: 700; font-size: 1.3rem; text-decoration: none; color: #0f3b2c;">🌿 Jarian Permana | Data & Ecological Conservation</a></div>
+            <ul style="display: flex; gap: 2.2rem; list-style: none;">
+                <li><a href="index.html" style="text-decoration: none; font-weight: 500; color: #2c3e50;">Projects</a></li>
+                <li><a href="blog.html" style="text-decoration: none; font-weight: 500; color: #2c3e50;">Blog</a></li>
+                <li><a href="about.html" style="text-decoration: none; font-weight: 500; color: #2c3e50;">About</a></li>
+                <li><a href="contact.html" style="text-decoration: none; font-weight: 500; color: #2c3e50;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Header -->
-<header>
-    <nav>
-        <div class="logo">
-            <a href="/index.html">🌿 Jarian Permana | Data & Ecology</a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/index.html">Projects</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-</header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>🌿 Conservation Data Science Portfolio</h1>
+                <p>Bridging ecology, data science, and open science for biodiversity conservation</p>
+            </div>
+        </section>
 
-<main>
-    <!-- Hero Section -->
-    <section class="project-detail-hero">
         <div class="container">
-            <h1>[PROJECT_TITLE]</h1>
-            <p>[PROJECT_SHORT_DESCRIPTION]</p>
-            <div class="project-meta">
-                <span class="project-meta-item"><i class="far fa-calendar-alt"></i> [PROJECT_DATE]</span>
-                <span class="project-meta-item"><i class="fas fa-code-branch"></i> Version [VERSION]</span>
-                <span class="project-meta-item"><i class="fas fa-chart-line"></i> [STATUS]</span>
-                <span class="project-meta-item"><i class="fas fa-globe"></i> [LICENSE]</span>
+            <div class="projects-grid">
+                <!-- Project 1: GBIF Analysis -->
+                <a href="project-gbif.html" class="project-card">
+                    <div class="card-image">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>GBIF Biodiversity Data Analysis</h3>
+                        <p>Analisis pola keanekaragaman hayati Indonesia menggunakan data GBIF dengan pendekatan data science dan ekologi spasial.</p>
+                        <div class="card-tags">
+                            <span>R</span><span>Python</span><span>GIS</span><span>GBIF API</span>
+                        </div>
+                        <div class="github-badge">
+                            <i class="fab fa-github"></i> github.com/jarianpermana/gbif-analysis
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2: Felidae Conservation -->
+                <a href="project-felidae.html" class="project-card">
+                    <div class="card-image">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Felidae Conservation in Oil Palm</h3>
+                        <p>Integrative strategies untuk konservasi Felidae di perkebunan sawit menggunakan PLEO, MaxEnt, dan camera trap.</p>
+                        <div class="card-tags">
+                            <span>MaxEnt</span><span>Camera Trap</span><span>PLEO</span><span>Spatial</span>
+                        </div>
+                        <div class="github-badge">
+                            <i class="fab fa-github"></i> github.com/jarianpermana/felidae-conservation
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3: Orangutan Habitat -->
+                <a href="project-orangutan.html" class="project-card">
+                    <div class="card-image">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Orangutan Habitat Suitability</h3>
+                        <p>Pemodelan kesesuaian habitat orangutan di Sumatera dan Kalimantan menggunakan machine learning dan data iklim.</p>
+                        <div class="card-tags">
+                            <span>Random Forest</span><span>Climate Data</span><span>Habitat Modeling</span>
+                        </div>
+                        <div class="github-badge">
+                            <i class="fab fa-github"></i> github.com/jarianpermana/orangutan-habitat
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 4: Marine Conservation -->
+                <a href="project-marine.html" class="project-card">
+                    <div class="card-image">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Marine Protected Area Analysis</h3>
+                        <p>Evaluasi efektivitas kawasan konservasi laut di Indonesia Timur menggunakan data satelit dan fishing effort.</p>
+                        <div class="card-tags">
+                            <span>Satellite Data</span><span>AIS</span><span>Python</span><span>QGIS</span>
+                        </div>
+                        <div class="github-badge">
+                            <i class="fab fa-github"></i> github.com/jarianpermana/mpa-analysis
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Tabs Navigation -->
-    <div class="project-tabs">
-        <button class="tab-btn active" data-tab="overview">📋 Overview</button>
-        <button class="tab-btn" data-tab="methods">🔬 Methods</button>
-        <button class="tab-btn" data-tab="results">📊 Results</button>
-        <button class="tab-btn" data-tab="reproduce">🔄 Reproduce</button>
-        <button class="tab-btn" data-tab="citation">📖 Citation</button>
-    </div>
-
-    <div class="container">
-        <!-- Tab 1: Overview -->
-        <div id="overview" class="tab-content active">
-            <h2>Project Overview</h2>
-            <p>[PROJECT_DETAILED_DESCRIPTION]</p>
-            
-            <h3>🎯 Objectives</h3>
-            <ul>
-                <li>[OBJECTIVE_1]</li>
-                <li>[OBJECTIVE_2]</li>
-                <li>[OBJECTIVE_3]</li>
-            </ul>
-            
-            <h3>📦 Key Features</h3>
-            <ul>
-                <li><strong>Data Source:</strong> [DATA_SOURCE]</li>
-                <li><strong>Temporal Coverage:</strong> [DATE_RANGE]</li>
-                <li><strong>Spatial Coverage:</strong> [SPATIAL_RANGE]</li>
-                <li><strong>Sample Size:</strong> [SAMPLE_SIZE] records</li>
-            </ul>
-            
-            <div class="download-links">
-                <a href="#" class="btn-download"><i class="fas fa-chart-line"></i> Interactive Dashboard</a>
-                <a href="#" class="btn-download btn-github"><i class="fab fa-github"></i> View Source Code</a>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download Report (PDF)</a>
+    <footer style="background: #f8fafc; border-top: 1px solid #e2edf2; padding: 2rem 0 1rem; margin-top: 2rem;">
+        <div class="container">
+            <div style="text-align: center;">
+                <p>© 2026 Jarian Permana — Licensed under CC BY 4.0</p>
             </div>
         </div>
+    </footer>
 
-        <!-- Tab 2: Methods -->
-        <div id="methods" class="tab-content">
-            <h2>Methodology</h2>
-            <p>This project follows the principles of <strong>reproducible research</strong> and <strong>transparent science</strong></p>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-database"></i> Data Acquisition</h3>
-                <p>[DATA_ACQUISITION_METHOD]</p>
-                <code>Data accessed on [ACCESS_DATE] via [API/Download]</code>
-            </div>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-filter"></i> Data Processing</h3>
-                <p>[DATA_PROCESSING_STEPS]</p>
-                <ul>
-                    <li>Step 1: [STEP_1]</li>
-                    <li>Step 2: [STEP_2]</li>
-                    <li>Step 3: [STEP_3]</li>
-                </ul>
-            </div>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-chart-line"></i> Analytical Framework</h3>
-                <p>[ANALYTICAL_METHOD]</p>
-                <div class="code-block">
-                    <pre><code class="language-r">
-# Example R code for reproducibility
-library(tidyverse)
-library(ALA4R)
-
-# Download occurrence data
-occurrences <- occurrences(taxon = "[SPECIES_NAME]",
-                          download_reason_id = "testing")
-                          
-# Data cleaning workflow
-cleaned_data <- occurrences %>%
-    filter(!is.na(longitude), !is.na(latitude)) %>%
-    distinct(occurrenceID, .keep_all = TRUE)
-                    </code></pre>
-                </div>
-            </div>
-            
-            <h3>✅ Strengths</h3>
-            <ul>
-                <li>[STRENGTH_1]</li>
-                <li>[STRENGTH_2]</li>
-            </ul>
-            
-            <div class="limitation-card">
-                <h3><i class="fas fa-exclamation-triangle"></i> Limitations & Caveats</h3>
-                <ul>
-                    <li>[LIMITATION_1]</li>
-                    <li>[LIMITATION_2]</li>
-                    <li>[LIMITATION_3]</li>
-                </ul>
-                <p><strong>Mitigation:</strong> [MITIGATION_STRATEGY]</p>
-            </div>
-        </div>
-
-        <!-- Tab 3: Results -->
-        <div id="results" class="tab-content">
-            <h2>Key Findings</h2>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-chart-bar"></i> Result 1: [RESULT_TITLE_1]</h3>
-                <p>[RESULT_DESCRIPTION_1]</p>
-                <img src="/assets/images/[result-image-1].jpg" alt="Result visualization 1" style="width:100%; border-radius:8px; margin:1rem 0;">
-            </div>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-chart-line"></i> Result 2: [RESULT_TITLE_2]</h3>
-                <p>[RESULT_DESCRIPTION_2]</p>
-                <img src="/assets/images/[result-image-2].jpg" alt="Result visualization 2" style="width:100%; border-radius:8px; margin:1rem 0;">
-            </div>
-            
-            <h3>📊 Statistical Summary</h3>
-            <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
-                <thead style="background: var(--primary); color: white;">
-                    <tr>
-                        <th style="padding: 0.75rem; text-align: left;">Metric</th>
-                        <th style="padding: 0.75rem; text-align: left;">Value</th>
-                        <th style="padding: 0.75rem; text-align: left;">95% CI</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--gray-300);">
-                        <td style="padding: 0.75rem;">[METRIC_1]</td>
-                        <td style="padding: 0.75rem;">[VALUE_1]</td>
-                        <td style="padding: 0.75rem;">[CI_1]</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--gray-300);">
-                        <td style="padding: 0.75rem;">[METRIC_2]</td>
-                        <td style="padding: 0.75rem;">[VALUE_2]</td>
-                        <td style="padding: 0.75rem;">[CI_2]</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Tab 4: Reproduce -->
-        <div id="reproduce" class="tab-content">
-            <h2>Reproduce This Analysis</h2>
-            <p>This project is 100% reproducible. Follow the instructions below to replicate all analyses.</p>
-            
-            <h3>📦 System Requirements</h3>
-            <ul>
-                <li>R version >= 4.2.0 or Python >= 3.9</li>
-                <li>Required packages: [PACKAGES_LIST]</li>
-                <li>Internet connection for data download</li>
-            </ul>
-            
-            <h3>🔧 Step-by-Step Reproduction</h3>
-            <div class="code-block">
-                <pre><code class="language-bash">
-# Step 1: Clone the repository
-git clone https://github.com/HarimauSum4tra/[PROJECT_REPO].git
-cd [PROJECT_REPO]
-
-# Step 2: Set up R environment (using renv)
-Rscript -e "install.packages('renv')"
-Rscript -e "renv::restore()"
-
-# Step 3: Run the analysis
-Rscript scripts/01_download_data.R
-Rscript scripts/02_clean_data.R
-Rscript scripts/03_analysis.R
-Rscript scripts/04_visualisation.R
-
-# Step 4: Generate report
-Rscript -e "rmarkdown::render('report.Rmd')"
-                </code></pre>
-            </div>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-box"></i> Docker Container (Alternative)</h3>
-                <div class="code-block">
-                    <pre><code class="language-bash">
-# Pull the Docker image
-docker pull [username]/[project]:latest
-
-# Run the container
-docker run -v $(pwd):/workspace [username]/[project]:latest
-                    </code></pre>
-                </div>
-            </div>
-            
-            <h3>📂 Repository Structure</h3>
-            <div class="code-block">
-                <pre><code class="language-plaintext">
-[PROJECT_NAME]/
-├── data/
-│   ├── raw/           # Raw data (gitignored)
-│   └── processed/     # Cleaned data
-├── scripts/           # Analysis scripts
-├── output/            # Figures and tables
-├── report.Rmd         # Main report
-├── renv.lock          # Package versions
-└── README.md          # Documentation
-                </code></pre>
-            </div>
-            
-            <a href="#" class="btn-download btn-github" style="margin-top: 1rem;">
-                <i class="fab fa-github"></i> Full Repository on GitHub
-            </a>
-        </div>
-
-        <!-- Tab 5: Citation -->
-        <div id="citation" class="tab-content">
-            <h2>Cite This Work</h2>
-            <p>If you use this project in your research, please cite:</p>
-            
-            <div class="citation-box">
-                <strong>APA Style:</strong><br>
-                Permana, J. ([YEAR]). <em>[PROJECT_TITLE]</em> (Version [VERSION]) [Computer software]. GitHub. 
-                https://github.com/HarimauSum4tra/[PROJECT_REPO]
-            </div>
-            
-            <div class="citation-box">
-                <strong>BibTeX:</strong>
-                <pre style="background: transparent; margin: 0.5rem 0; overflow-x: auto;">@misc{permana_[YEAR]_[PROJECT_NAME],
-  author = {Jarian Permana},
-  title = {[PROJECT_TITLE]},
-  year = {[YEAR]},
-  publisher = {GitHub},
-  url = {https://github.com/HarimauSum4tra/[PROJECT_REPO]},
-  doi = {[DOI_NUMBER]}
-}</pre>
-            </div>
-            
-            <div class="citation-box">
-                <strong>RIS Format:</strong>
-                <pre style="background: transparent; margin: 0.5rem 0; overflow-x: auto;">TY  - DATA
-AU  - Permana, Jarian
-PY  - [YEAR]
-DA  - [DATE]
-TI  - [PROJECT_TITLE]
-UR  - https://github.com/HarimauSum4tra/[PROJECT_REPO]
-ER  -</pre>
-            </div>
-            
-            <div class="method-card">
-                <h3><i class="fas fa-hand-peace"></i> License & Acknowledgment</h3>
-                <p>This project is released under the <strong>MIT License</strong>. Data sources are acknowledged in the methods section.</p>
-                <p><em>Inspired by Global Researcher and their commitment to open science.</em></p>
-            </div>
-        </div>
-    </div>
-</main>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h4>🌿 Jarian Permana</h4>
-            <p>Data Scientist & Ecologist</p>
-        </div>
-        <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="/index.html">Projects</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Connect</h4>
-            <div class="social-links">
-                <a href="https://github.com/HarimauSum4tra" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-orcid"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2024 Jarian Permana — Built with ❤️ for open science & Conservation | Inspired by Fauna & Flora International</p>
-    </div>
-</footer>
-
-<!-- Scripts -->
-<script src="/js/main.js"></script>
-<script src="/js/dark-mode.js"></script>
-<script>
-    // Tab switching functionality
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tabId = btn.getAttribute('data-tab');
-            
-            // Update active tab button
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Update active tab content
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
+    <script>
+        // Dark mode toggle
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const saved = localStorage.getItem('darkMode');
+        if (saved === 'enabled' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            body.classList.add('dark');
+            localStorage.setItem('darkMode', 'enabled');
+        }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            localStorage.setItem('darkMode', body.classList.contains('dark') ? 'enabled' : 'disabled');
         });
-    });
-</script>
+    </script>
 </body>
 </html>
