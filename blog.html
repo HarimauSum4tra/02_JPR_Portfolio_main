@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | [Nama Anda] - Methods & Tutorials</title>
+    <title>Blog | Jarian Permana - Methods & Tutorials</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-mode">  <!-- ← PERUBAHAN 1: Tambahkan class dark-mode -->
     <div class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
     </div>
@@ -16,7 +16,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">🌿 [Nama Anda] | Data & Ecology</a>
+                <a href="index.html">🌿 Jarian Permana | Data & Ecological Conservation</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Projects</a></li>
@@ -162,8 +162,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>🌿 [Nama Anda]</h4>
-                <p>Data Scientist & Ecologist</p>
+                <h4>🌿 Jarian Permana</h4>
+                <p>Data Scientist & Ecological Conservation</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -175,7 +175,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 [Nama Anda] — Inspired by ALA Labs</p>
+            <p>© 2024 Jarian Permana — Inspired by ALA Labs</p>
         </div>
     </footer>
 
@@ -351,6 +351,48 @@
         }
     </style>
     
-    <script src="js/dark-mode.js"></script>
+    <!-- PERUBAHAN 2: Ganti script dengan yang lengkap -->
+    <script>
+        // Pastikan dark mode aktif saat halaman dimuat
+        document.body.classList.add('dark-mode');
+        
+        // Dark mode toggle functionality
+        const toggleBtn = document.querySelector('.dark-mode-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                // Simpan preferensi ke localStorage
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+        }
+        
+        // Cek preferensi tersimpan (opsional, untuk mempertahankan pilihan user)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'disabled') {
+            document.body.classList.remove('dark-mode');
+        } else if (savedMode === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        // Mobile navigation toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

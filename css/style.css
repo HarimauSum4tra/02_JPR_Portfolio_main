@@ -725,6 +725,61 @@ nav {
 }
 
 /* ============================================
+   DOWNLOAD SECTION (TAMBAHKAN DISINI)
+   ============================================ */
+.download-section {
+    margin-top: 1rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1e462f;
+    color: white;
+    padding: 0.9rem 1.4rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    flex: 1;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-download:hover {
+    background: #0f2f20;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+}
+
+.btn-cv {
+    background: #2c5a6e;
+}
+
+.btn-cv:hover {
+    background: #1e4050;
+}
+
+/* Dark mode support untuk download buttons */
+body.dark-mode .btn-download {
+    background: #2c6e4f;
+}
+
+body.dark-mode .btn-cv {
+    background: #3a6d82;
+}
+
+
+/* ============================================
    FOOTER
    ============================================ */
 footer {
@@ -854,5 +909,13 @@ code {
     }
     .nav-links.active {
         right: 0;
+    }
+    /* Tambahkan responsive untuk download buttons */
+    .download-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .btn-download {
+        width: 100%;
     }
 }

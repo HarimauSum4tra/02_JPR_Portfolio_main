@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | [Nama Anda]</title>
+    <title>Contact | Jarian Permana - Data Scientist & Ecologist</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-mode">  <!-- PERUBAHAN: Tambahkan class dark-mode untuk langsung dark mode -->
+
     <div class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
     </div>
@@ -16,7 +17,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">🌿 [Nama Anda] | Data & Ecology</a>
+                <a href="index.html">🌿 Jarian Permana | Data & Ecological Conservation</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Projects</a></li>
@@ -50,7 +51,7 @@
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <h3>Email</h3>
-                                    <p>email@domain.com</p>
+                                    <p>jarian.work.1@gmail.com</p>
                                     <small>Response within 2-3 business days</small>
                                 </div>
                             </div>
@@ -58,7 +59,7 @@
                                 <i class="fab fa-github"></i>
                                 <div>
                                     <h3>GitHub</h3>
-                                    <p>github.com/[username]</p>
+                                    <p>github.com/HarimauSum4tra</p>
                                     <small>For code issues and contributions</small>
                                 </div>
                             </div>
@@ -66,16 +67,16 @@
                                 <i class="fab fa-linkedin"></i>
                                 <div>
                                     <h3>LinkedIn</h3>
-                                    <p>linkedin.com/in/[username]</p>
+                                    <p>linkedin.com/in/jarianpermana</p>
                                     <small>Professional networking</small>
                                 </div>
                             </div>
                             <div class="contact-method">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-orcid"></i>
                                 <div>
-                                    <h3>X (Twitter)</h3>
-                                    <p>@[username]</p>
-                                    <small>For quick updates and discussions</small>
+                                    <h3>ORCID</h3>
+                                    <p>orcid.org/0000-0000-0000-0000</p>
+                                    <small>Research publications</small>
                                 </div>
                             </div>
                         </div>
@@ -137,89 +138,33 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>🌿 [Nama Anda]</h4>
-                <p>Data Scientist & Ecologist</p>
+                <h4>🌿 Jarian Permana</h4>
+                <p>Data Scientist & Conservation Ecologist<br>Fauna & Flora Indonesia Programme</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog: Open Ecology</a></li>
+                    <li><a href="about.html">About & CV</a></li>
+                    <li><a href="contact.html">Collaborate</a></li>
                 </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow & Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-researchgate"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 [Nama Anda] — Inspired by ALA Labs</p>
+            <p>© 2026 Jarian Permana — Licensed under CC BY 4.0 | Built for open science & global conservation impact</p>
         </div>
     </footer>
 
-    <script>
-        // Contact form handling with Google Forms integration (free)
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const formStatus = document.getElementById('formStatus');
-                const submitBtn = contactForm.querySelector('.btn-submit');
-                const originalText = submitBtn.innerText;
-                
-                // Show loading state
-                submitBtn.disabled = true;
-                submitBtn.innerText = 'Sending...';
-                formStatus.innerHTML = '';
-                
-                // Collect form data
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                // Simulate sending (replace with actual endpoint)
-                // For production, you can use Formspree, Netlify Forms, or your own backend
-                try {
-                    // Option 1: Using Formspree (free tier)
-                    // Uncomment and replace YOUR_FORM_ID
-                    // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                    //     method: 'POST',
-                    //     headers: { 'Content-Type': 'application/json' },
-                    //     body: JSON.stringify(data)
-                    // });
-                    
-                    // Simulate success (remove in production)
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    // Success message
-                    formStatus.innerHTML = `
-                        <div class="success-message">
-                            <i class="fas fa-check-circle"></i>
-                            Thank you! I'll get back to you within 2-3 business days.
-                        </div>
-                    `;
-                    contactForm.reset();
-                    
-                } catch (error) {
-                    formStatus.innerHTML = `
-                        <div class="error-message">
-                            <i class="fas fa-exclamation-circle"></i>
-                            Oops! Something went wrong. Please email me directly at email@domain.com
-                        </div>
-                    `;
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalText;
-                    
-                    // Clear success message after 5 seconds
-                    setTimeout(() => {
-                        if (formStatus.innerHTML) {
-                            formStatus.innerHTML = '';
-                        }
-                    }, 5000);
-                }
-            });
-        }
-    </script>
-    
     <style>
         .contact-hero {
             background: linear-gradient(135deg, var(--bg-offwhite) 0%, var(--bg-light) 100%);
@@ -372,6 +317,107 @@
         }
     </style>
     
-    <script src="js/dark-mode.js"></script>
+    <script>
+        // PERUBAHAN: Dark mode toggle dengan localStorage (default dark mode)
+        const toggleBtn = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        const loadTheme = () => {
+            const saved = localStorage.getItem('contactDarkMode');
+            if (saved === 'disabled') {
+                body.classList.remove('dark-mode');
+            } else {
+                body.classList.add('dark-mode');
+                if (saved !== 'enabled') {
+                    localStorage.setItem('contactDarkMode', 'enabled');
+                }
+            }
+        };
+        loadTheme();
+        
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('contactDarkMode', 'disabled');
+                } else {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('contactDarkMode', 'enabled');
+                }
+            });
+        }
+        
+        // Mobile navigation toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Contact form handling with Google Forms integration (free)
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formStatus = document.getElementById('formStatus');
+                const submitBtn = contactForm.querySelector('.btn-submit');
+                const originalText = submitBtn.innerText;
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Sending...';
+                formStatus.innerHTML = '';
+                
+                // Collect form data
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData);
+                
+                // Simulate sending (replace with actual endpoint)
+                // For production, you can use Formspree, Netlify Forms, or your own backend
+                try {
+                    // Simulate success (remove in production when using real backend)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Success message
+                    formStatus.innerHTML = `
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            Thank you! I'll get back to you within 2-3 business days.
+                        </div>
+                    `;
+                    contactForm.reset();
+                    
+                } catch (error) {
+                    formStatus.innerHTML = `
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Oops! Something went wrong. Please email me directly at jarian.work.1@gmail.com
+                        </div>
+                    `;
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalText;
+                    
+                    // Clear success message after 5 seconds
+                    setTimeout(() => {
+                        if (formStatus.innerHTML) {
+                            formStatus.innerHTML = '';
+                        }
+                    }, 5000);
+                }
+            });
+        }
+    </script>
 </body>
 </html>

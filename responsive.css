@@ -150,6 +150,36 @@
     }
 }
 
+/* ============================================
+   ADDITIONAL RESPONSIVE FOR DOWNLOAD SECTION
+   ============================================ */
+
+/* Tablet & Mobile untuk Download Buttons */
+@media (max-width: 768px) {
+    .download-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Mobile Landscape - penyesuaian tambahan */
+@media (max-width: 480px) {
+    .download-section {
+        margin-top: 0.8rem;
+    }
+    
+    .btn-download {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+
 /* Print Styles */
 @media print {
     .dark-mode-toggle,
