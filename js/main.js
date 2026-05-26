@@ -218,7 +218,7 @@ if (copyBtn) {
         e.preventDefault();
         const bibtex = `@misc{portfolio2024,
   author = {[Jarian Permana]},
-  title = {Ecological Specialist},
+  title = {Data & Ecological Specialist},
   year = {2026},
   howpublished = {\\url{https://harimausum4tra.github.io/02_JPR_Portfolio_main/}}
 }`;

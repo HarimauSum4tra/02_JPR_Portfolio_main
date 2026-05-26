@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-mode">  <!-- PERUBAHAN: Tambahkan class dark-mode untuk langsung dark mode -->
+
     <!-- Dark Mode Toggle -->
     <div class="dark-mode-toggle">
         <i class="fas fa-moon"></i>
@@ -21,11 +22,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">🌿 Jarian Permana | Data & Ecological Conservation</a>
+                <a href="about.html">🌿 Jarian Permana | Data & Ecological Conservation</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Projects</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -93,69 +95,37 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Featured Research Projects</h2>
-                    <p>Inspired by ALA Labs — each project includes full code, data sources, and transparent methods</p>
+                    <p>Each project includes full code, data sources, and transparent methods</p>
                 </div>
                 <div class="projects-grid" id="projectsGrid">
-                    <!-- Project 1: Biodiversity Dashboard -->
-                    <div class="project-card" data-category="ecology r-project dashboard" data-title="biodiversity trends australia">
-                        <div class="card-badge">Featured</div>
-                        <div class="card-image">
-                            <img src="assets/images/project-thumb-1.jpg" alt="Biodiversity Dashboard">
-                            <div class="card-overlay">
-                                <a href="projects/biodiversity-dashboard/" class="btn-small">Live Demo →</a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="date">2024</span>
-                                <span class="tech">R • flexdashboard • ALA4R</span>
-                            </div>
-                            <h3>Biodiversity Trends in Australia</h3>
-                            <p>Interactive dashboard visualising 50,000+ occurrence records from Atlas of Living Australia. Includes temporal trends, species richness maps, and data quality filters.</p>
-                            <div class="card-links">
-                                <a href="projects/biodiversity-dashboard/" class="link">View Project →</a>
-                                <a href="https://github.com/[username]/biodiversity-dashboard" class="link-icon"><i class="fab fa-github"></i> Code</a>
-                                <a href="projects/biodiversity-dashboard/methods.pdf" class="link-icon"><i class="fas fa-file-pdf"></i> Methods</a>
-                            </div>
-                            <div class="tags">
-                                <span>Occurrence data</span>
-                                <span>Spatial analysis</span>
-                                <span>Time series</span>
-                                <span>Data cleaning</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Project 2: Species Distribution Modelling -->
-                    <div class="project-card" data-category="ecology python" data-title="maxent species distribution modelling">
+                    <div class="project-card" data-category="ecology R" data-title="maxent species distribution modelling">
                         <div class="card-image">
-                            <img src="assets/images/project-thumb-2.jpg" alt="Species Distribution Model">
+                            <img src="assets/images/ou_png.png" alt="Orangutan Density">
                             <div class="card-overlay">
-                                <a href="projects/species-modelling/" class="btn-small">View Report →</a>
+                                <a href="projects/fauna_ou_density/ou_density.html" class="btn-small">View Report →</a>
                             </div>
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
-                                <span class="date">2024</span>
-                                <span class="tech">Python • MaxEnt • GeoPandas</span>
+                                <span class="date">2026</span>
+                                <span class="tech">R Studio • Excel</span>
                             </div>
-                            <h3>MaxEnt Species Distribution Modelling</h3>
-                            <p>Presence-only modelling for 5 endangered species. Includes uncertainty quantification, cross-validation, and bias correction for citizen science data.</p>
+                            <h3>Orangutan Density Estimation from Nest Surveys</h3>
+                            <p>This analysis uses two different R packages to estimate nest density from line-transect distance sampling data. The first package, `Distance`, is used to apply the conventional distance sampling approach, where individual nest detections and their perpendicular distances from the transect line are used to estimate a detection function. The second package, `unmarked`, is used to apply a hierarchical distance sampling approach through `distsamp()`, where detections are grouped into distance intervals for each transect.</p>
                             <div class="card-links">
-                                <a href="projects/species-modelling/" class="link">View Project →</a>
-                                <a href="https://github.com/[username]/species-modelling" class="link-icon"><i class="fab fa-github"></i> Code</a>
-                                <a href="projects/species-modelling/methods.pdf" class="link-icon"><i class="fas fa-file-pdf"></i> Methods</a>
+                                <a href="https://github.com/ryanavri/fauna_ou_density/blob/main/nest_simulated.RData" class="link">View Data Simulated →</a>
+                                <a href="https://github.com/ryanavri/ou_density.git" class="link-icon"><i class="fab fa-github"></i> Code</a>
+                                <a href="projects/fauna_ou_density/ou_density.pdf" class="link-icon"><i class="fas fa-file-pdf"></i> Methods</a>
                             </div>
                             <div class="tags">
-                                <span>MaxEnt</span>
-                                <span>SDM</span>
-                                <span>Uncertainty</span>
-                                <span>BIOCLIM</span>
+                                <span>Distance Sampling</span>
+                                <span>RDistance</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: GBIF Analysis: Pongo pygmaeus in Kalimantana -->
+                    <!-- Project 3: GBIF Analysis: Pongo pygmaeus in Kalimantan -->
                     <div class="project-card" data-category="r-project visualisation" data-title="gbif data cleaning visualization">
                         <div class="card-image">
                             <img src="assets/images/01_borneo_distribution_map.png" alt="GBIF Analysis">
@@ -186,61 +156,7 @@
                     </div>
 
                     <!-- Project 4: Shiny App for Conservation Planning -->
-                    <div class="project-card" data-category="dashboard r-project ecology" data-title="conservation planning shiny app">
-                        <div class="card-image">
-                            <img src="assets/images/project-thumb-4.jpg" alt="Conservation Planning">
-                            <div class="card-overlay">
-                                <a href="projects/conservation-app/" class="btn-small">Launch App →</a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="date">2024</span>
-                                <span class="tech">R Shiny • leaflet • prioritizr</span>
-                            </div>
-                            <h3>Conservation Prioritisation Tool</h3>
-                            <p>Interactive Shiny app for identifying priority conservation areas based on species richness, threat status, and land cost. Includes Marxan connectivity.</p>
-                            <div class="card-links">
-                                <a href="projects/conservation-app/" class="link">View Project →</a>
-                                <a href="https://github.com/[username]/conservation-app" class="link-icon"><i class="fab fa-github"></i> Code</a>
-                                <a href="projects/conservation-app/methods.pdf" class="link-icon"><i class="fas fa-file-pdf"></i> Methods</a>
-                            </div>
-                            <div class="tags">
-                                <span>Shiny</span>
-                                <span>Conservation</span>
-                                <span>Prioritizr</span>
-                                <span>Interactive</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Climate Data Analysis -->
-                    <div class="project-card" data-category="python visualisation" data-title="climate change impact analysis">
-                        <div class="card-image">
-                            <img src="assets/images/project-thumb-5.jpg" alt="Climate Analysis">
-                            <div class="card-overlay">
-                                <a href="projects/climate-analysis/" class="btn-small">View Analysis →</a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="date">2023</span>
-                                <span class="tech">Python • xarray • matplotlib</span>
-                            </div>
-                            <h3>Climate Change Impact on Biodiversity</h3>
-                            <p>Analysis of 50 years of climate data and its correlation with species distribution shifts. Includes anomaly detection and future projections under RCP scenarios.</p>
-                            <div class="card-links">
-                                <a href="projects/climate-analysis/" class="link">View Project →</a>
-                                <a href="https://github.com/[username]/climate-analysis" class="link-icon"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                            <div class="tags">
-                                <span>Climate data</span>
-                                <span>Time series</span>
-                                <span>NetCDF</span>
-                                <span>CMIP6</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <!-- Load More Button -->
@@ -258,7 +174,7 @@
                 <div class="values-grid">
                     <div class="value-card">
                         <div class="value-icon">
-                            <img src="assets/images/icon-reproducible.svg" alt="Reproducible">
+                            <i class="fas fa-code"></i>
                         </div>
                         <h3>Fully Reproducible</h3>
                         <p>Every analysis includes complete code, session info, and data sources. One-click replication from GitHub.</p>
@@ -266,7 +182,7 @@
                     </div>
                     <div class="value-card">
                         <div class="value-icon">
-                            <img src="assets/images/icon-transparent.svg" alt="Transparent">
+                            <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Methods Disclosed</h3>
                         <p>Strengths AND limitations clearly stated. No hidden assumptions or p-hacking.</p>
@@ -274,7 +190,7 @@
                     </div>
                     <div class="value-card">
                         <div class="value-icon">
-                            <img src="assets/images/icon-robust.svg" alt="Robust">
+                            <i class="fas fa-flask"></i>
                         </div>
                         <h3>Robust & Validated</h3>
                         <p>Cross-validation, sensitivity analysis, and uncertainty quantification for all models.</p>
@@ -320,7 +236,8 @@
                 <ul>
                     <li><a href="index.html">Projects</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About me</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -333,6 +250,7 @@
                     <a href="https://orcid.org/0009-0002-7384-4506" target="_blank"><i class="fab fa-orcid"></i></a>
                 </div>
             </div>
+            <div class="footer-section">
                 <h4>Cite This Portfolio</h4>
                 <code>Jarian Permana. (2024). Data Science Portfolio. GitHub Pages.</code>
                 <a href="#" class="btn-copy">Copy BibTeX</a>
@@ -344,9 +262,92 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/dark-mode.js"></script>
-    <script src="js/analytics.js"></script>
+    <!-- PERUBAHAN: Script lengkap dengan default dark mode -->
+    <script>
+        // Dark mode toggle with localStorage (default dark mode)
+        const toggleBtn = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        const loadTheme = () => {
+            const saved = localStorage.getItem('darkMode');
+            if (saved === 'disabled') {
+                body.classList.remove('dark-mode');
+            } else {
+                body.classList.add('dark-mode');
+                if (saved !== 'enabled') {
+                    localStorage.setItem('darkMode', 'enabled');
+                }
+            }
+        };
+        loadTheme();
+        
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                } else {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                }
+            });
+        }
+        
+        // Mobile navigation toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Simple search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                const projects = document.querySelectorAll('.project-card');
+                
+                projects.forEach(project => {
+                    const title = project.getAttribute('data-title') || project.querySelector('h3').innerText.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        project.style.display = '';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                projects.forEach(project => {
+                    const categories = project.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        project.style.display = '';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
