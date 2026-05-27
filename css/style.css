@@ -348,7 +348,7 @@ nav {
    BLOG HERO SECTION WITH BACKGROUND IMAGE
    ============================================ */
 .blog-hero {
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 10%, rgba(44, 110, 73, 0.4) 100%),
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 10%, rgba(44, 110, 73, 0.1) 100%),
                 url('../assets/images/blog_background.jpg');
     background-size: cover;
     background-position: center 30%;
