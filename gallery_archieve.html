@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Gallery - Conservation journey of Jarian Permana, featuring scientific publications, field documentation, and visual storytelling of biodiversity conservation in Indonesia">
+    <meta name="author" content="Jarian Permana">
+    <title>Gallery | Jarian Permana - Conservation Visual Archive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           GALLERY PAGE - PROFESSIONAL PHOTOGRAPHER STYLE
+           ============================================ */
+        
+        /* Hero Section dengan efek parallax */
+        .gallery-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.75) 0%, rgba(44, 110, 73, 0.6) 100%),
+                        url('assets/images/Cbancanus_bck.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            padding: 6rem 0 5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg-light), transparent);
+        }
+        
+        .gallery-hero h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        }
+        
+        .gallery-hero p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        
+        /* Category Header dengan style minimalis */
+        .gallery-category {
+            margin-bottom: 5rem;
+        }
+        
+        .gallery-category-header {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .gallery-category-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-category-header .category-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .category-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        /* Books Grid - Elegant Card Style */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .book-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -12px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.25);
+        }
+        
+        .book-cover {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a2a3a, #2c6e49);
+        }
+        
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+        
+        .book-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-card:hover .book-overlay {
+            transform: translateY(0);
+        }
+        
+        .book-overlay .btn-outline-small {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .book-overlay .btn-outline-small:hover {
+            background: var(--primary);
+        }
+        
+        .book-info {
+            padding: 1.2rem;
+        }
+        
+        .book-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
+        
+        .book-info .book-meta {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .book-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        /* Gallery Grid Layout - Masonry Style */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.7);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay p {
+            color: white;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
+        }
+        
+        .gallery-overlay .photo-date {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        /* Chapter/Session Styles */
+        .chapter {
+            margin-bottom: 4rem;
+        }
+        
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-300);
+        }
+        
+        .chapter-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            opacity: 0.5;
+            line-height: 1;
+        }
+        
+        .chapter-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .chapter-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Lightbox Modal untuk Preview Gambar */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .lightbox-close:hover {
+            color: var(--primary-light);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            padding: 1rem;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-hero h1 {
+                font-size: 2.5rem;
+            }
+            .books-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .chapter-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            .chapter-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+<div class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i>
+</div>
+
+<header>
+    <nav>
+        <div class="logo"><a href="index.html">🌿 Jarian Permana | Data & Ecological Conservation</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="gallery-hero" style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(44, 110, 73, 0.15)), url('assets/images/visual_archieve_2.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Visual Archive</h1>
+            <p>Documenting conservation science through lens & literature</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            
+            <!-- SECTION 1: BOOKS & POSTERS -->
+            <div class="gallery-category">
+                <div class="gallery-category-header">
+                    <h2>📚 Scientific Publications</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-subtitle">Peer-reviewed papers, posters, and technical guides</p>
+                </div>
+                
+                <div class="books-grid" id="booksGrid">
+                    <!-- Book 1 -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="assets/images/ars_amfibi_bgnp_2.png" alt="Amphibian Identification Field Guide">
+                            <div class="book-overlay">
+                                <a href="https://www.nhbs.com/amfibi-di-taman-national-batang-gadis-sumatera-utara-amphibians-of-the-batang-gadis-national-park-province-north-sumatra-book" class="btn-outline-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>A guide to the amphibians of Batang Gadis National Park</h3>
+                            <div class="book-meta">Amfibi Reptil Sumatra, 2020</div>
+                            <p>This book presents the findings of a 2018–2019 survey on amphibians in the Key Biodiversity Area "Batang Gadis" in North Sumatra, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Book 2 -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="assets/images/ars_amfibi_jawa_3.png" alt="Amphibian Identification Field Guide">
+                            <div class="book-overlay">
+                                <a href="#" class="btn-outline-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>A guide to the amphibians of Java Island</h3>
+                            <div class="book-meta">Amfibi Reptil Sumatra, 2021</div>
+                            <p>The book portraits the amphibian fauna of Java Island with a total of 45 species, three of them still not yet formally scientificaly described</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Book 3 -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="assets/images/FF_logo_2.jpg" alt="Biodiversity Survey and Data Management Guide">
+                            <div class="book-overlay">
+                                <a href="https://bookdown.org/ryan_avriandy/ffip_surveikehati/" class="btn-outline-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Guide</a>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Biodiversity Survey and Data Management for Conservation</h3>
+                            <div class="book-meta">Fauna & Flora Indonesia Programme, 2025</div>
+                            <p>End-to-end workflow for ecological monitoring and data management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: GALLERY PHOTOS - Career Journey (Multiple Chapters) -->
+            <div class="gallery-category">
+                <div class="gallery-category-header">
+                    <h2>📸 Field Archive</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-subtitle">Visual documentation of conservation work across Kalimantan</p>
+                </div>
+                
+                <!-- Chapter 1: Survey & Monitoring -->
+                <div class="chapter">
+                    <div class="chapter-title">
+                        <span class="chapter-number">01</span>
+                        <div>
+                            <div class="chapter-name">Ecological Survey & Monitoring</div>
+                            <div class="chapter-desc">Orangutan population assessment, camera trap installation, and biodiversity surveys</div>
+                        </div>
+                    </div>
+                    <div class="gallery-grid" id="galleryChapter1">
+                        <div class="gallery-item" data-caption="Orangutan nest survey in Gunung Palung National Park, 2023">
+                            <img src="assets/gallery/survey-1.jpg" alt="Orangutan survey">
+                            <div class="gallery-overlay">
+                                <p>Orangutan nest survey, Gunung Palung NP</p>
+                                <span class="photo-date">2023</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Camera trap installation training for village forest managers">
+                            <img src="assets/gallery/survey-2.jpg" alt="Camera trap training">
+                            <div class="gallery-overlay">
+                                <p>Camera trap training for community rangers</p>
+                                <span class="photo-date">2024</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Gibbon auditory survey in Schwaner landscape">
+                            <img src="assets/gallery/survey-3.jpg" alt="Gibbon survey">
+                            <div class="gallery-overlay">
+                                <p>Gibbon auditory survey, Schwaner landscape</p>
+                                <span class="photo-date">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2: Community Engagement -->
+                <div class="chapter">
+                    <div class="chapter-title">
+                        <span class="chapter-number">02</span>
+                        <div>
+                            <div class="chapter-name">Community & Stakeholder Engagement</div>
+                            <div class="chapter-desc">Working with local communities, BKSDA, and DLHK for collaborative conservation</div>
+                        </div>
+                    </div>
+                    <div class="gallery-grid" id="galleryChapter2">
+                        <div class="gallery-item" data-caption="Village Forest establishment ceremony in West Kalimantan">
+                            <img src="assets/gallery/community-1.jpg" alt="Village forest ceremony">
+                            <div class="gallery-overlay">
+                                <p>Village Forest permit handover</p>
+                                <span class="photo-date">2024</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="SMART conservation training with BKSDA West Kalimantan">
+                            <img src="assets/gallery/community-2.jpg" alt="SMART training">
+                            <div class="gallery-overlay">
+                                <p>SMART conservation training with BKSDA</p>
+                                <span class="photo-date">2023</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Community meeting for restoration planning">
+                            <img src="assets/gallery/community-3.jpg" alt="Community meeting">
+                            <div class="gallery-overlay">
+                                <p>Restoration planning with local community</p>
+                                <span class="photo-date">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3: Forest Restoration -->
+                <div class="chapter">
+                    <div class="chapter-title">
+                        <span class="chapter-number">03</span>
+                        <div>
+                            <div class="chapter-name">Forest Restoration & Nursery</div>
+                            <div class="chapter-desc">Reforestation activities, native species nursery, and biodiversity-friendly livelihoods</div>
+                        </div>
+                    </div>
+                    <div class="gallery-grid" id="galleryChapter3">
+                        <div class="gallery-item" data-caption="Tree planting day at Muara Kendawangan Nature Reserve">
+                            <img src="assets/gallery/restoration-1.jpg" alt="Tree planting">
+                            <div class="gallery-overlay">
+                                <p>Tree planting at Muara Kendawangan NR</p>
+                                <span class="photo-date">2023</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Native species nursery establishment">
+                            <img src="assets/gallery/restoration-2.jpg" alt="Nursery">
+                            <div class="gallery-overlay">
+                                <p>Native species nursery</p>
+                                <span class="photo-date">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 4: Marine Conservation -->
+                <div class="chapter">
+                    <div class="chapter-title">
+                        <span class="chapter-number">04</span>
+                        <div>
+                            <div class="chapter-name">Marine & Coastal Conservation</div>
+                            <div class="chapter-desc">Karimata Islands, seascape assessment, and marine biodiversity monitoring</div>
+                        </div>
+                    </div>
+                    <div class="gallery-grid" id="galleryChapter4">
+                        <div class="gallery-item" data-caption="Seascape assessment in Karimata Islands Nature Reserve">
+                            <img src="assets/gallery/marine-1.jpg" alt="Marine survey">
+                            <div class="gallery-overlay">
+                                <p>Seascape assessment, Karimata Islands</p>
+                                <span class="photo-date">2024</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Citizen science monitoring training for local community">
+                            <img src="assets/gallery/marine-2.jpg" alt="Citizen science">
+                            <div class="gallery-overlay">
+                                <p>Citizen science training</p>
+                                <span class="photo-date">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🌿 Jarian Permana</h4>
+            <p>Data Scientist · Conservation Ecologist<br>Fauna & Flora Indonesia Programme</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Follow</h4>
+            <div class="social-links">
+                <a href="https://github.com/HarimauSum4tra" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-orcid"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Jarian Permana — Licensed under CC BY 4.0 | Built for open science & global conservation impact</p>
+    </div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<script>
+    // ========== DARK MODE TOGGLE ==========
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    const loadTheme = () => {
+        const saved = localStorage.getItem('darkMode');
+        if (saved === 'disabled') {
+            body.classList.remove('dark-mode');
+        } else {
+            body.classList.add('dark-mode');
+            if (saved !== 'enabled') {
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        }
+    };
+    loadTheme();
+    
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    }
+    
+    // ========== MOBILE NAVIGATION ==========
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if (burger) {
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+    }
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+    
+    // ========== LIGHTBOX FOR GALLERY ==========
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const caption = item.getAttribute('data-caption') || item.querySelector('.gallery-overlay p')?.innerText || '';
+            
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = caption;
+            lightbox.classList.add('active');
+        });
+    });
+    
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+    
+    // Close with ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
+<!-- Gallery Carousel Script -->
+<script src="js/gallery-carousel.js"></script>
+</body>
+</html>

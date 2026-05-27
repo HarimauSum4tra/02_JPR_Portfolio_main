@@ -57,7 +57,7 @@
             background: var(--bg-light);
         }
         
-        /* Category Header dengan style minimalis */
+        /* Category Header */
         .gallery-category {
             margin-bottom: 5rem;
         }
@@ -93,7 +93,7 @@
             margin: 1rem 0 1.5rem 0;
         }
         
-        /* Books Grid - Elegant Card Style */
+        /* Books Grid */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -188,7 +188,7 @@
             line-height: 1.5;
         }
         
-        /* Gallery Grid Layout - Masonry Style */
+        /* Gallery Grid Layout */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -203,16 +203,56 @@
             aspect-ratio: 4/3;
         }
         
-        .gallery-item img {
+        /* Single photo item */
+        .gallery-item.single-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease, filter 0.3s ease;
         }
         
-        .gallery-item:hover img {
+        .gallery-item.single-photo:hover img {
             transform: scale(1.08);
             filter: brightness(0.7);
+        }
+        
+        /* Multi-photo item styles */
+        .gallery-item.multi-photo {
+            position: relative;
+        }
+        
+        .multi-photo-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .multi-photo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .multi-photo-preview img:first-child {
+            grid-column: span 2;
+        }
+        
+        .photo-count-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: white;
+            z-index: 5;
+            pointer-events: none;
         }
         
         .gallery-overlay {
@@ -242,7 +282,7 @@
             opacity: 0.7;
         }
         
-        /* Chapter/Session Styles */
+        /* Chapter Styles */
         .chapter {
             margin-bottom: 4rem;
         }
@@ -275,7 +315,7 @@
             margin-top: 0.25rem;
         }
         
-        /* Lightbox Modal untuk Preview Gambar */
+        /* Lightbox Modal untuk Single Photo */
         .lightbox {
             display: none;
             position: fixed;
@@ -326,6 +366,156 @@
             background: rgba(0,0,0,0.5);
         }
         
+        /* Carousel Modal Styles */
+        .carousel-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-modal.active {
+            display: flex;
+        }
+        
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            background: transparent;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .carousel-main {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .carousel-main img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        
+        .carousel-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .carousel-prev {
+            left: 20px;
+        }
+        
+        .carousel-next {
+            right: 20px;
+        }
+        
+        .carousel-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 20;
+            transition: 0.2s;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-close:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        .carousel-thumbnails {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+            padding: 10px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        
+        .carousel-thumbnails img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .carousel-thumbnails img.active-thumb {
+            opacity: 1;
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .carousel-thumbnails img:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        
+        .carousel-index {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.8rem;
+            z-index: 20;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .gallery-hero h1 {
@@ -343,6 +533,19 @@
             }
             .chapter-number {
                 font-size: 1.8rem;
+            }
+            .carousel-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            .carousel-thumbnails img {
+                width: 40px;
+                height: 40px;
+            }
+            .carousel-caption {
+                font-size: 0.7rem;
+                padding: 1rem;
             }
         }
     </style>
@@ -402,22 +605,22 @@
                         <div class="book-info">
                             <h3>A guide to the amphibians of Batang Gadis National Park</h3>
                             <div class="book-meta">Amfibi Reptil Sumatra, 2020</div>
-                            <p>This book presents the findings of a 2018–2019 survey on amphibians in the Key Biodiversity Area "Batang Gadis" in North Sumatra, Indonesia</p>
+                            <p>This book presents the findings of a 2018-2019 survey on amphibians in the Key Biodiversity Area "Batang Gadis" in North Sumatra, Indonesia</p>
                         </div>
                     </div>
                     
                     <!-- Book 2 -->
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="assets/images/ars_amfibi_jawa_3.png" alt="Integrative Strategies for Felidae Conservation">
+                            <img src="assets/images/ars_amfibi_jawa_3.png" alt="Amphibian Identification Field Guide">
                             <div class="book-overlay">
                                 <a href="#" class="btn-outline-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
                             </div>
                         </div>
                         <div class="book-info">
-                            <h3>Integrative Strategies for Felidae Conservation in Oil Palm Plantations</h3>
-                            <div class="book-meta">IJIRSS, 2026</div>
-                            <p>Using PLEO, MaxEnt, and Camera Trap Validation</p>
+                            <h3>A guide to the amphibians of Java Island</h3>
+                            <div class="book-meta">Amfibi Reptil Sumatra, 2021</div>
+                            <p>The book portraits the amphibian fauna of Java Island with a total of 45 species, three of them still not yet formally scientificaly described</p>
                         </div>
                     </div>
                     
@@ -438,7 +641,7 @@
                 </div>
             </div>
 
-            <!-- SECTION 2: GALLERY PHOTOS - Career Journey (Multiple Chapters) -->
+            <!-- SECTION 2: GALLERY PHOTOS - Career Journey -->
             <div class="gallery-category">
                 <div class="gallery-category-header">
                     <h2>📸 Field Archive</h2>
@@ -456,27 +659,76 @@
                         </div>
                     </div>
                     <div class="gallery-grid" id="galleryChapter1">
-                        <div class="gallery-item" data-caption="Orangutan nest survey in Gunung Palung National Park, 2023">
-                            <img src="assets/gallery/survey-1.jpg" alt="Orangutan survey">
+                        
+                        <!-- MULTI-PHOTO ITEM 1: Orangutan Survey Series (5 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/direct_ou.jpg","assets/images/gallery_field_photos/ou_survey_kendawangan.jpg","assets/images/gallery_field_photos/doc_finding_sp.jpg","assets/images/gallery_field_photos/ukur_dbh.jpg","assets/images/gallery_field_photos/name_tag.jpg"]'
+                             data-captions='[
+                                 "Photo of Orangutan - Muara Kendawangan Nature Reserve",
+                                 "Team survey orangutan - Muara Kendawangan Nature Reserve",
+                                 "Orangutan nest documentation - using camera",
+                                 "Measuring the DBH of orangutan nest tree",
+                                 "Orangutan nest tree identification/tagging"
+                             ]'
+                             data-title="Orangutan Population Survey - Gunung Palung NP 2023">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/direct_ou.jpg" alt="Orangutan in MKNR">
+                                <img src="assets/images/gallery_field_photos/ou_survey_kendawangan.jpg" alt="MKNR Team Survey">
+                                <img src="assets/images/gallery_field_photos/doc_finding_sp.jpg" alt="Documentation finding">
+                            </div>
+                            <span class="photo-count-badge">📷 5 photos</span>
                             <div class="gallery-overlay">
-                                <p>Orangutan nest survey, Gunung Palung NP</p>
-                                <span class="photo-date">2023</span>
+                                <p>Orangutan nest survey & monitoring</p>
+                                <span class="photo-date">2021-2026 | Arabella-Schwaner & Wetlands Landscape</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="Camera trap installation training for village forest managers">
-                            <img src="assets/gallery/survey-2.jpg" alt="Camera trap training">
+                        
+                        <!-- MULTI-PHOTO ITEM 2: Camera Trap Survey (4 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/ct_instaled.jpg","assets/images/gallery_field_photos/ct_team.jpg","assets/images/gallery_field_photos/ct_checking.jpg","assets/images/gallery_field_photos/ct_data_review.jpg"]'
+                             data-captions='[
+                                 "Camera trap installation in the field",
+                                 "Camera trap team in Batu Nyambu protected area",
+                                 "Checking camera trap memory card and battery",
+                                 "Reviewing captured wildlife images together"
+                             ]'
+                             data-title="Camera Trap Survey - 2020-2026">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/ct_instaled.jpg" alt="Camera trap installed">
+                                <img src="assets/images/gallery_field_photos/ct_team.jpg" alt="Camera trap team">
+                                <img src="assets/images/gallery_field_photos/ct_checking.jpg" alt="Checking camera">
+                            </div>
+                            <span class="photo-count-badge">📷 4 photos</span>
                             <div class="gallery-overlay">
-                                <p>Camera trap training for community rangers</p>
-                                <span class="photo-date">2024</span>
+                                <p>Camera Trap Survey in Multiple Landscapes</p>
+                                <span class="photo-date">2020-2026 | Field documentation</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="Gibbon auditory survey in Schwaner landscape">
-                            <img src="assets/gallery/survey-3.jpg" alt="Gibbon survey">
+                        
+                        <!-- MULTI-PHOTO ITEM 3: Biodiversity Survey (6 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/bio_landscape.jpg","assets/images/gallery_field_photos/Tim_gburung.jpg","assets/images/gallery_field_photos/brief_on_field.jpg","assets/images/gallery_field_photos/identification.jpg","assets/images/gallery_field_photos/preparation.jpg","assets/images/gallery_field_photos/photo_on_field.jpg"]'
+                             data-captions='[
+                                 "Landscape area of survey - Schwaner Landscape",
+                                 "Biodiversity Team in Schwaner Landscape",
+                                 "Briefing on the field before survey",
+                                 "Identification of species found",
+                                 "Preparation of collected samples for documentation",
+                                 "Documenting species found on the field"
+                             ]'
+                             data-title="Biodiversity and Carbon Stock Survey - 2020-2026">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/bio_landscape.jpg" alt="Landscape">
+                                <img src="assets/images/gallery_field_photos/Tim_gburung.jpg" alt="Team">
+                                <img src="assets/images/gallery_field_photos/brief_on_field.jpg" alt="Briefing">
+                            </div>
+                            <span class="photo-count-badge">📷 6 photos</span>
                             <div class="gallery-overlay">
-                                <p>Gibbon auditory survey, Schwaner landscape</p>
-                                <span class="photo-date">2023</span>
+                                <p>Biodiversity Survey in Multiple Landscapes</p>
+                                <span class="photo-date">2022-2026 | Field documentation</span>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -490,27 +742,55 @@
                         </div>
                     </div>
                     <div class="gallery-grid" id="galleryChapter2">
-                        <div class="gallery-item" data-caption="Village Forest establishment ceremony in West Kalimantan">
-                            <img src="assets/gallery/community-1.jpg" alt="Village forest ceremony">
+                        
+                        <!-- MULTI-PHOTO ITEM 1: Stakeholder Engagement (3 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/stakeholder_bksda.jpeg","assets/images/gallery_field_photos/stakeholder_gpnp.jpeg","assets/images/gallery_field_photos/stakeholder_dlhk.jpeg"]'
+                             data-captions='[
+                                 "Collaboration with West Kalimantan Natural Resources Conservation Agency (BKSDA Kalbar)",
+                                 "Collaboration with Gunung Palung National Park (GPNP)",
+                                 "Collaboration with Department of Environment and Forestry (DLHK Kalbar)"
+                             ]'
+                             data-title="Stakeholder Engagements - West Kalimantan 2022-2026">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/stakeholder_bksda.jpeg" alt="BKSDA">
+                                <img src="assets/images/gallery_field_photos/stakeholder_gpnp.jpeg" alt="GPNP">
+                                <img src="assets/images/gallery_field_photos/stakeholder_dlhk.jpeg" alt="DLHK">
+                            </div>
+                            <span class="photo-count-badge">📷 3 photos</span>
                             <div class="gallery-overlay">
-                                <p>Village Forest permit handover</p>
-                                <span class="photo-date">2024</span>
+                                <p>Stakeholder Engagement for Conservation</p>
+                                <span class="photo-date">2022-2026 | Collaboration</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="SMART conservation training with BKSDA West Kalimantan">
-                            <img src="assets/gallery/community-2.jpg" alt="SMART training">
+                        
+                        <!-- SINGLE PHOTO ITEM 2: Wildlife Research Training - IOI Group -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/ioi_training_smartn_bio_1.jpg","assets/images/gallery_field_photos/ioi_training_smartn_bio.jpg",
+                             "assets/images/gallery_field_photos/ioi_training_smartn_bio_2.jpg", "assets/images/gallery_field_photos/ioi_training_smartn_bio_3.jpg",
+                             "assets/images/gallery_field_photos/ioi_training_smartn_bio_4.jpg"]'
+                             data-captions='[
+                                 "All team members with BKSDA and IOI Group",
+                                 "Presentation of the material identification population of Biodiversity",
+                                 "Training on data entry into data sheets",
+                                 "Simulation of a camera trap setup",
+                                 "Training team member"
+                             ]'
+                             data-title=" Wildlife Research Training with BKSDA and IOI Group - West Kalimantan 2022">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/ioi_training_smartn_bio_1.jpg" alt="team Office">
+                                <img src="assets/images/gallery_field_photos/ioi_training_smartn_bio.jpg" alt="Presentation">
+                                <img src="assets/images/gallery_field_photos/ioi_training_smartn_bio_2.jpg" alt="Data sheets">
+                                <img src="assets/images/gallery_field_photos/ioi_training_smartn_bio_3.jpg" alt="Camtrap Setup">
+                                <img src="assets/images/gallery_field_photos/ioi_training_smartn_bio_4.jpg" alt="On The Field">
+                            </div>
+                            <span class="photo-count-badge">📷 5 photos</span>
                             <div class="gallery-overlay">
-                                <p>SMART conservation training with BKSDA</p>
-                                <span class="photo-date">2023</span>
+                                <p> Wildlife Research Training with BKSDA and IOI Group</p>
+                                <span class="photo-date">2022 | Collaboration Training</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="Community meeting for restoration planning">
-                            <img src="assets/gallery/community-3.jpg" alt="Community meeting">
-                            <div class="gallery-overlay">
-                                <p>Restoration planning with local community</p>
-                                <span class="photo-date">2024</span>
-                            </div>
-                        </div>
+                        <!-- SINGLE PHOTO ITEM 3: Community Meeting -->
                     </div>
                 </div>
 
@@ -524,20 +804,31 @@
                         </div>
                     </div>
                     <div class="gallery-grid" id="galleryChapter3">
-                        <div class="gallery-item" data-caption="Tree planting day at Muara Kendawangan Nature Reserve">
-                            <img src="assets/gallery/restoration-1.jpg" alt="Tree planting">
+                        
+                        <!-- MULTI-PHOTO ITEM 1: Tree Planting Day (4 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/images/gallery_field_photos/restoration_angkut.jpg","assets/images/gallery_field_photos/restoration_planting_3.jpg","assets/images/gallery_field_photos/restoration_seedling_monitoring.jpg","assets/images/gallery_field_photos/restoration_pra-pasca.jpg"]'
+                             data-captions='[
+                                 "Community members carrying tree seedlings to planting site",
+                                 "Planting native tree species in degraded area",
+                                 "Restoration seedlings monitoring",
+                                 "Before-after comparison of restoration site (12 months)"
+                             ]'
+                             data-title="Tree Planting Day - Village Forest 2022">
+                            <div class="multi-photo-preview">
+                                <img src="assets/images/gallery_field_photos/restoration_angkut.jpg" alt="Preview 1">
+                                <img src="assets/images/gallery_field_photos/restoration_planting_3.jpg" alt="Preview 2">
+                                <img src="assets/images/gallery_field_photos/restoration_seedling_monitoring.jpg" alt="Preview 3">
+                                <img src="assets/images/gallery_field_photos/restoration_pra-pasca.jpg" alt="Preview 3">
+                            </div>
+                            <span class="photo-count-badge">📷 4 photos</span>
                             <div class="gallery-overlay">
-                                <p>Tree planting at Muara Kendawangan NR</p>
-                                <span class="photo-date">2023</span>
+                                <p>Retoration Degraded Area at Village Forest</p>
+                                <span class="photo-date">2022 | Restoration series</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="Native species nursery establishment">
-                            <img src="assets/gallery/restoration-2.jpg" alt="Nursery">
-                            <div class="gallery-overlay">
-                                <p>Native species nursery</p>
-                                <span class="photo-date">2024</span>
-                            </div>
-                        </div>
+                        
+                        <!-- SINGLE PHOTO ITEM 2: Nursery -->
                     </div>
                 </div>
 
@@ -551,20 +842,51 @@
                         </div>
                     </div>
                     <div class="gallery-grid" id="galleryChapter4">
-                        <div class="gallery-item" data-caption="Seascape assessment in Karimata Islands Nature Reserve">
-                            <img src="assets/gallery/marine-1.jpg" alt="Marine survey">
+                        
+                        <!-- SINGLE PHOTO ITEM 1: Citizen Science -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/gallery/marine-1.jpg","assets/gallery/marine-2.jpg","assets/gallery/community-2.jpg","assets/gallery/survey-1.jpg"]'
+                             data-captions='[
+                                 "Boat preparation for seascape assessment in Karimata Islands",
+                                 "Coral reef transect survey - documenting benthic cover",
+                                 "Fish biodiversity monitoring using underwater visual census",
+                                 "Seagrass bed assessment and water quality sampling"
+                             ]'
+                             data-title="Citizen Science Training - 2021-2023">
+                            <div class="multi-photo-preview">
+                                <img src="assets/gallery/marine-1.jpg" alt="Preview 1">
+                                <img src="assets/gallery/marine-2.jpg" alt="Preview 2">
+                                <img src="assets/gallery/community-2.jpg" alt="Preview 3">
+                            </div>
+                            <span class="photo-count-badge">📷 4 photos</span>
+                            <div class="gallery-overlay">
+                                <p>Citizen Science Training, Karimata Islands</p>
+                                <span class="photo-date">2021-2023 | Citizen Science Training</span>
+                            </div>
+                        </div>
+                        
+                        <!-- MULTI-PHOTO ITEM 1: Seascape Assessment (4 photos) -->
+                        <div class="gallery-item multi-photo" 
+                             data-photos='["assets/gallery/marine-1.jpg","assets/gallery/marine-2.jpg","assets/gallery/community-2.jpg","assets/gallery/survey-1.jpg"]'
+                             data-captions='[
+                                 "Boat preparation for seascape assessment in Karimata Islands",
+                                 "Coral reef transect survey - documenting benthic cover",
+                                 "Fish biodiversity monitoring using underwater visual census",
+                                 "Seagrass bed assessment and water quality sampling"
+                             ]'
+                             data-title="Karimata Islands Seascape Assessment - 2024">
+                            <div class="multi-photo-preview">
+                                <img src="assets/gallery/marine-1.jpg" alt="Preview 1">
+                                <img src="assets/gallery/marine-2.jpg" alt="Preview 2">
+                                <img src="assets/gallery/community-2.jpg" alt="Preview 3">
+                            </div>
+                            <span class="photo-count-badge">📷 4 photos</span>
                             <div class="gallery-overlay">
                                 <p>Seascape assessment, Karimata Islands</p>
-                                <span class="photo-date">2024</span>
+                                <span class="photo-date">2024 | Marine survey</span>
                             </div>
                         </div>
-                        <div class="gallery-item" data-caption="Citizen science monitoring training for local community">
-                            <img src="assets/gallery/marine-2.jpg" alt="Citizen science">
-                            <div class="gallery-overlay">
-                                <p>Citizen science training</p>
-                                <span class="photo-date">2023</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -601,11 +923,26 @@
     </div>
 </footer>
 
-<!-- Lightbox Modal -->
+<!-- Lightbox Modal untuk Single Photo -->
 <div id="lightbox" class="lightbox">
     <span class="lightbox-close">&times;</span>
     <img id="lightbox-img" src="" alt="">
     <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<!-- Carousel Modal untuk Multi-Photo -->
+<div id="carouselModal" class="carousel-modal">
+    <span class="carousel-close">&times;</span>
+    <div class="carousel-container">
+        <div class="carousel-main">
+            <button class="carousel-btn carousel-prev">❮</button>
+            <img id="carouselImage" src="" alt="">
+            <button class="carousel-btn carousel-next">❯</button>
+            <div class="carousel-index" id="carouselIndex">1 / 0</div>
+            <div class="carousel-caption" id="carouselCaption"></div>
+        </div>
+        <div class="carousel-thumbnails" id="carouselThumbnails"></div>
+    </div>
 </div>
 
 <script>
@@ -654,13 +991,13 @@
         });
     });
     
-    // ========== LIGHTBOX FOR GALLERY ==========
+    // ========== LIGHTBOX FOR SINGLE PHOTO ==========
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.querySelector('.lightbox-close');
     
-    document.querySelectorAll('.gallery-item').forEach(item => {
+    document.querySelectorAll('.gallery-item.single-photo').forEach(item => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
             const caption = item.getAttribute('data-caption') || item.querySelector('.gallery-overlay p')?.innerText || '';
@@ -681,11 +1018,119 @@
         }
     });
     
-    // Close with ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
         }
+    });
+    
+    // ========== CAROUSEL FOR MULTI-PHOTO ==========
+    const carouselModal = document.getElementById('carouselModal');
+    const carouselImage = document.getElementById('carouselImage');
+    const carouselCaption = document.getElementById('carouselCaption');
+    const carouselIndex = document.getElementById('carouselIndex');
+    const carouselThumbnails = document.getElementById('carouselThumbnails');
+    const carouselPrev = document.querySelector('.carousel-prev');
+    const carouselNext = document.querySelector('.carousel-next');
+    const carouselClose = document.querySelector('.carousel-close');
+    
+    let currentPhotoSet = [];
+    let currentCaptions = [];
+    let currentIndex = 0;
+    let currentTitle = '';
+    
+    function updateCarousel() {
+        if (currentPhotoSet.length === 0) return;
+        carouselImage.src = currentPhotoSet[currentIndex];
+        carouselCaption.innerHTML = currentCaptions[currentIndex] || currentTitle;
+        carouselIndex.innerHTML = `${currentIndex + 1} / ${currentPhotoSet.length}`;
+        
+        document.querySelectorAll('.carousel-thumbnails img').forEach((thumb, i) => {
+            if (i === currentIndex) {
+                thumb.classList.add('active-thumb');
+            } else {
+                thumb.classList.remove('active-thumb');
+            }
+        });
+    }
+    
+    function buildThumbnails() {
+        carouselThumbnails.innerHTML = '';
+        currentPhotoSet.forEach((src, idx) => {
+            const thumb = document.createElement('img');
+            thumb.src = src;
+            thumb.alt = `Thumbnail ${idx + 1}`;
+            thumb.addEventListener('click', () => {
+                currentIndex = idx;
+                updateCarousel();
+            });
+            carouselThumbnails.appendChild(thumb);
+        });
+        updateCarousel();
+    }
+    
+    function openCarousel(photos, captions, title, startIndex = 0) {
+        currentPhotoSet = photos;
+        currentCaptions = captions;
+        currentTitle = title;
+        currentIndex = startIndex;
+        buildThumbnails();
+        carouselModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeCarousel() {
+        carouselModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function nextPhoto() {
+        if (currentPhotoSet.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentPhotoSet.length;
+        updateCarousel();
+    }
+    
+    function prevPhoto() {
+        if (currentPhotoSet.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentPhotoSet.length) % currentPhotoSet.length;
+        updateCarousel();
+    }
+    
+    if (carouselPrev) carouselPrev.addEventListener('click', prevPhoto);
+    if (carouselNext) carouselNext.addEventListener('click', nextPhoto);
+    if (carouselClose) carouselClose.addEventListener('click', closeCarousel);
+    if (carouselModal) {
+        carouselModal.addEventListener('click', (e) => {
+            if (e.target === carouselModal) closeCarousel();
+        });
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if (!carouselModal.classList.contains('active')) return;
+        if (e.key === 'ArrowLeft') prevPhoto();
+        if (e.key === 'ArrowRight') nextPhoto();
+        if (e.key === 'Escape') closeCarousel();
+    });
+    
+    // Attach to multi-photo items
+    document.querySelectorAll('.gallery-item.multi-photo').forEach(item => {
+        item.addEventListener('click', (e) => {
+            if (e.target.classList && e.target.classList.contains('photo-count-badge')) return;
+            
+            const photosAttr = item.getAttribute('data-photos');
+            const captionsAttr = item.getAttribute('data-captions');
+            const title = item.getAttribute('data-title') || '';
+            
+            if (photosAttr) {
+                try {
+                    const photos = JSON.parse(photosAttr);
+                    const captions = captionsAttr ? JSON.parse(captionsAttr) : photos.map((_, i) => `Photo ${i + 1}`);
+                    openCarousel(photos, captions, title);
+                } catch(e) {
+                    console.error('Error parsing gallery data:', e);
+                }
+            }
+        });
     });
 </script>
 </body>
