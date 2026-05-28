@@ -349,7 +349,7 @@ nav {
    ============================================ */
 .blog-hero {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 10%, rgba(44, 110, 73, 0.1) 100%),
-                url('../assets/images/blog_background.jpg');
+                url('../assets/images/blog_background.JPG');
     background-size: cover;
     background-position: center 30%;
     background-attachment: fixed;
@@ -1084,7 +1084,7 @@ code {
 
 .blog-hero {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 10%, rgba(44, 110, 73, 0.1) 100%),
-                url('../assets/images/blog_background.jpg');
+                url('../assets/images/blog_background.JPG');
     background-size: cover;
     background-position: center 30%;
     background-attachment: fixed;
