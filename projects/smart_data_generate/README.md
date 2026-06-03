@@ -10,6 +10,34 @@ A standardized and reproducible workflow for processing SMART (Spatial Monitorin
 - Landscape: BKSDA Kalimantan Barat
 - **Note:** Demonstration outputs use simulated data for educational purposes.
 
+## Data Path Strucrure
+Database
+                
+                  01_Database/SMART/
+                      ├── Seksi Wilayah I/
+                      │   ├── Kawasan A/
+                      │   │   ├── 2024/
+                      │   │   │   ├── patrol_summary.csv
+                      │   │   │   ├── threats.csv
+                      │   │   │   └── biodiversity.csv
+                      │   │   └── 2025/
+                      │   └── Kawasan B/
+                      └── Seksi Wilayah II/
+                  02_Analysis
+                      └── 01_smart_data_generate
+                              ├── code/
+                              │     ├── source/ 1_fn_smart_data.R
+                              │     └── 00_smart_data_generate.R
+                              │
+                              ├── data/
+                              ├── images/
+                              ├── output/
+                              ├── 01_smart_generate.qmd
+                              ├── data/
+                              └── output/
+
+                      
+                      
 ## Data Types Processed
 - **Patrol Summary:** Spatial tracks, patrol effort, distance metrics
 - **Threat Records:** Human activity observations, illegal actions
