@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Jarian Permana - Conservation Portfolio"
-  site-url: "https://harimausum4tra.github.io/02_JPR_Portfolio_main/"
+  site-url: "https://jarianpermana.github.io/02_JPR_Portfolio_main/"
   navbar:
     background: "#ffffff" # Warna navbar putih bersih seperti ALA Labs
     left:
