@@ -220,7 +220,7 @@ if (copyBtn) {
   author = {[Jarian Permana]},
   title = {Data & Ecological Specialist},
   year = {2026},
-  howpublished = {\\url{https://harimausum4tra.github.io/02_JPR_Portfolio_main/}}
+  howpublished = {\\url{https://jarianpermana.github.io/02_JPR_Portfolio_main/}}
 }`;
         
         navigator.clipboard.writeText(bibtex).then(() => {
