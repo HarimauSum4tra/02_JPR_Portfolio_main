@@ -1,11 +1,8 @@
-name: Publish Quarto Site
+name: Build Quarto Docs
 on:
-  push:
-    branches: main
-permissions:
-  contents: write
+  workflow_dispatch:
 jobs:
-  build-deploy:
+  build-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,9 +19,3 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Render Website
         uses: quarto-dev/quarto-actions/render@v2
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
-          force_orphan: true

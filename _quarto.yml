@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs # Sangat penting agar bisa di-hosting di GitHub Pages (gh-pages)
+  output-dir: docs # Simpan output Quarto terpisah agar 5 halaman HTML utama di root tetap aman
 
 website:
   title: "Jarian Permana - Conservation Portfolio"
