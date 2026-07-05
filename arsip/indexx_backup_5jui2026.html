@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ecological Science - Reproducible research, ecological modelling, data visualisation">
+    <meta name="author" content="Jarian Permana">
+    <title>Data Science Portfolio | Jarian Permana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">  <!-- PERUBAHAN: Tambahkan class dark-mode untuk langsung dark mode -->
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="about.html">Jarian Permana | Data & Ecological Conservation</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Data Science <span class="highlight">Ecological Conservation</span></h1>
+                <p>Transparency • Robust Methods • Open Science</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">Explore Projects →</a>
+                    <a href="assets/documents/cv.pdf" class="btn-secondary" target="_blank">Download CV</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Research Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Reproducible</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Open</span>
+                        <span class="stat-label">Source Code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search projects by title, method, or topic...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters">
+            <div class="container">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ecology">Ecology & Modelling</button>
+                    <button class="filter-btn" data-filter="visualisation">Data Visualisation</button>
+                    <button class="filter-btn" data-filter="r-project">R Project</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Research Projects</h2>
+                    <p>Each project includes full code, data sources, and transparent methods</p>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project 1: Orangutan Density -->
+                    <div class="project-card" data-category="r-project ecology visualisation R" data-title="maxent species distribution modelling">
+                        <div class="card-image">
+                            <img src="assets/images/ou_png.png" alt="Orangutan Density">
+                            <div class="card-overlay">
+                                <a href="projects/fauna_ou_density/ou_density.html" class="btn-small">View Report →</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="date">2026</span>
+                                <span class="tech">R Studio • Excel</span>
+                            </div>
+                            <h3>Orangutan Density Estimation from Nest Surveys</h3>
+                            <p>This analysis uses two different R packages to estimate nest density from line-transect distance sampling data. The first package, `Distance`, is used to apply the conventional distance sampling approach, where individual nest detections and their perpendicular distances from the transect line are used to estimate a detection function. The second package, `unmarked`, is used to apply a hierarchical distance sampling approach through `distsamp()`, where detections are grouped into distance intervals for each transect.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/ryanavri/fauna_ou_density/blob/main/nest_simulated.RData" class="link">View Data Simulated →</a>
+                                <a href="https://github.com/ryanavri/ou_density.git" class="link-icon"><i class="fab fa-github"></i> Code</a>
+                                <a href="projects/fauna_ou_density/ou_density.pdf" class="link-icon"><i class="fas fa-file-pdf"></i> Methods</a>
+                            </div>
+                            <div class="tags">
+                                <span>Distance Sampling</span>
+                                <span>RDistance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: GBIF Analysis: Pongo pygmaeus in Kalimantan -->
+                    <div class="project-card" data-category="r-project ecology visualisation" data-title="gbif data cleaning visualization">
+                        <div class="card-image">
+                            <img src="assets/images/01_borneo_distribution_map.png" alt="GBIF Analysis">
+                            <div class="card-overlay">
+                                <a href="projects/gbif-analysis-pongo-kalimantan/01_gbif_analysis_pongo_kalimantan.html" class="btn-small">View Report →</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="date">2024</span>
+                                <span class="tech">R • rgbif • ggplot2 • sf</span>
+                            </div>
+                            <h3>Conservation Biogeography of Pongo pygmaeus: A 25-Year GBIF Data Synthesis</h3>
+                            <p>This study analyzes 24 years (2000-2024) of occurrence records from the Global Biodiversity Information Facility (GBIF), focusing on Indonesia and Malaysia. 2,176 occurrence records analyzed, 9 unique locations, 58.2% identified to subspecies level.</p>
+                            <div class="card-links">
+                                <a href="projects/gbif-analysis-pongo-kalimantan/" class="link">View Project →</a>
+                                <a href="https://github.com/JarianPermana/01_gbif_indonesia_analysis" class="link-icon"><i class="fab fa-github"></i> Code</a>
+                                <a href="projects/gbif-analysis-pongo-kalimantan/README.md" class="link-icon"><i class="fas fa-file-alt"></i> README</a>
+                            </div>
+                            <div class="tags">
+                                <span>rgbif</span>
+                                <span>Data validation</span>
+                                <span>ggplot2</span>
+                                <span>quarto</span>
+                                <span>Open data</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3: Generating Data from SMART Conservation -->
+                    <div class="project-card" data-category="r-project ecology visualisation" data-title="gbif data cleaning visualization">
+                        <div class="card-image">
+                            <img src="assets/images/project_smart_generate/infografis_smart_generate_2.jpg" alt="GBIF Analysis">
+                            <div class="card-overlay">
+                                <a href="projects/smart_data_generate/01_smart_generate.html" class="btn-small">View Guide →</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="date">2026</span>
+                                <span class="tech"> dpylyr • janitor • lubridate • sf</span>
+                            </div>
+                            <h3>Generating Data from SMART Cobservation</h3>
+                            <p>Reproducible analytical pipeline for processing SMART patrol data: cleaning, spatial processing, threat mapping, and hierarchical summaries for wildlife monitoring.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/JarianPermana/02_JPR_Portfolio_main/tree/main/projects/smart_data_generate" class="link">View Project →</a>
+                                <a href="https://github.com/JarianPermana/01_smart_generate" class="link-icon"><i class="fab fa-github"></i> Code</a>
+                                <a href="projects/smart_data_generate/README_SG.md" class="link-icon"><i class="fas fa-file-alt"></i> README</a>
+                            </div>
+                            <div class="tags">
+                                <span>janitor</span>
+                                <span>lubridate</span>
+                                <span>Data Generate</span>
+                                <span>Data validation</span>
+                                <span>ggplot2</span>
+                                <span>quarto</span>
+                                <span>Open data</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button id="loadMoreBtn" class="btn-outline">Load More Projects</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / Updates Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3>Stay Updated on New Projects</h3>
+                    <p>Get notified when I publish new research or methods tutorials</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe →</button>
+                    </form>
+                    <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Jarian Permana</h4>
+                <p>Data Scientist & Ecological Conservation</p>
+                <p>Reproducible research for biodiversity conservation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow</h4>
+                <div class="social-links">
+                    <a href="https://github.com/JarianPermana" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/jarianpermana" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/jarianpermana" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://orcid.org/0009-0002-7384-4506" target="_blank"><i class="fab fa-orcid"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Cite This Portfolio</h4>
+                <code>Jarian Permana. (2024). Data & Ecological Conservation Portfolio. GitHub Pages.</code>
+                <a href="#" class="btn-copy">Copy BibTeX</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Jarian Permana — Built with HTML/CSS/JS | Hosted on GitHub Pages</p>
+            <p>Acknowledgment: Inspired by a  <a href="https://labs.ala.org.au/" target="_blank">Nature</a> and conservationist in the world</p>
+        </div>
+    </footer>
+
+    <!-- PERUBAHAN: Script lengkap dengan default dark mode -->
+    <script>
+        // Dark mode toggle with localStorage (default dark mode)
+        const toggleBtn = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        const loadTheme = () => {
+            const saved = localStorage.getItem('darkMode');
+            if (saved === 'disabled') {
+                body.classList.remove('dark-mode');
+            } else {
+                body.classList.add('dark-mode');
+                if (saved !== 'enabled') {
+                    localStorage.setItem('darkMode', 'enabled');
+                }
+            }
+        };
+        loadTheme();
+        
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                } else {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                }
+            });
+        }
+        
+        // Mobile navigation toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Simple search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                const projects = document.querySelectorAll('.project-card');
+                
+                projects.forEach(project => {
+                    const title = project.getAttribute('data-title') || project.querySelector('h3').innerText.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        project.style.display = '';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                projects.forEach(project => {
+                    const categories = project.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        project.style.display = '';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
