@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "2_JPR_Portfolio_ALALabs.html",
-    "href": "2_JPR_Portfolio_ALALabs.html",
-    "title": "Conservation Portfolio",
-    "section": "",
-    "text": "Berikut adalah kumpulan analisis data, eksperimen kode, dan visualisasi terkait konservasi yang pernah saya kerjakan.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "projects/smart_data_generate/README_SG.html",
     "href": "projects/smart_data_generate/README_SG.html",
     "title": "SMART Patrol Data Processing Pipeline",
@@ -54,6 +47,20 @@
     "title": "SMART Patrol Data Processing Pipeline",
     "section": "",
     "text": "```bash # Clone repository git clone https://github.com/HarimauSum4tra/01_smart_generate.git"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Portfolio Konservasi & Analisis Data",
+    "section": "",
+    "text": "Portofolio digital Jarian Permana dalam menjelajahi biodiversitas melalui lensa data."
+  },
+  {
+    "objectID": "index.html#proyek-unggulan",
+    "href": "index.html#proyek-unggulan",
+    "title": "Portfolio Konservasi & Analisis Data",
+    "section": "Proyek Unggulan",
+    "text": "Proyek Unggulan\n\n\n&lt;img src=\"images/orangutan_thumb.jpg\" alt=\"Orangutan Habitat\"&gt;\n&lt;h3&gt;&lt;a href=\"projects/project1_orangutan.html\"&gt;Pemodelan Habitat Orangutan di Kalimantan&lt;/a&gt;&lt;/h3&gt;\n&lt;p&gt;Memetakan kesesuaian habitat terkini dan masa depan menggunakan data kehadiran dari GBIF dan variabel lingkungan global.&lt;/p&gt;\n\n\n&lt;img src=\"images/deforest_thumb.jpg\" alt=\"Deforestasi\"&gt;\n&lt;h3&gt;&lt;a href=\"projects/project2_deforestation.html\"&gt;Analisis Tren Deforestasi dengan Google Earth Engine & R&lt;/a&gt;&lt;/h3&gt;\n&lt;p&gt;Mengkuantifikasi kehilangan tutupan pohon tahunan di Sumatera dan dampaknya terhadap fragmentasi habitat.&lt;/p&gt;\n\n\n\nMari berkolaborasi! Hubungi saya di: jarian.permana@email.com"
   },
   {
     "objectID": "projects/project1_orangutan.html",

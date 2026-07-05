@@ -7,5 +7,11 @@
   },
   "projects/project1_orangutan.Rmd": {
     "project1_orangutan.html": "bd90d473"
+  },
+  "index.Rmd": {
+    "index.html": "d2ba3e73"
+  },
+  "projects/smart_data_generate/README_SG.md": {
+    "README_SG.html": "b9f11757"
   }
 }
