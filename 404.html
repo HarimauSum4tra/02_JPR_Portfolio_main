@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p>Oops! The page you're looking for doesn't exist or has been moved.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn-primary">← Back to Projects</a>
+                <a href="contact.html" class="btn-secondary">Contact Me</a>
+            </div>
+            <div class="error-suggestions">
+                <p>You might be looking for:</p>
+                <ul>
+                    <li><a href="index.html">Featured Projects</a></li>
+                    <li><a href="blog.html">Methods Tutorials</a></li>
+                    <li><a href="about.html">About & Transparency</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-offwhite) 0%, var(--bg-light) 100%);
+            padding: 2rem;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .error-suggestions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-300);
+        }
+        
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .error-suggestions li {
+            margin: 0.5rem 0;
+        }
+        
+        .error-suggestions a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
