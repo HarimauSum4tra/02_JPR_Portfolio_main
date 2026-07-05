@@ -1,0 +1,28 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monitoring, Evaluation and Learning cycle">
+  <rect x="0" y="0" width="700" height="400" rx="10" fill="#12253b"/>
+  <g>
+    <path d="M 354.97 22.07 A 178 178 0 0 1 501.61 106.73 L 431.77 149.70 A 96 96 0 0 0 352.68 104.04 Z" fill="#1e4f34" stroke="#0d1f30" stroke-width="2.5"/>
+    <path d="M 506.58 115.34 A 178 178 0 0 1 506.58 284.66 L 434.45 245.66 A 96 96 0 0 0 434.45 154.34 Z" fill="#2c6e49" stroke="#0d1f30" stroke-width="2.5"/>
+    <path d="M 501.61 293.27 A 178 178 0 0 1 354.97 377.93 L 352.68 295.96 A 96 96 0 0 0 431.77 250.30 Z" fill="#3a8159" stroke="#0d1f30" stroke-width="2.5"/>
+    <path d="M 345.03 377.93 A 178 178 0 0 1 198.39 293.27 L 268.23 250.30 A 96 96 0 0 0 347.32 295.96 Z" fill="#4a9e6e" stroke="#0d1f30" stroke-width="2.5"/>
+    <path d="M 193.42 284.66 A 178 178 0 0 1 193.42 115.34 L 265.55 154.34 A 96 96 0 0 0 265.55 245.66 Z" fill="#5aa87c" stroke="#0d1f30" stroke-width="2.5"/>
+    <path d="M 198.39 106.73 A 178 178 0 0 1 345.03 22.07 L 347.32 104.04 A 96 96 0 0 0 268.23 149.70 Z" fill="#c9992a" stroke="#0d1f30" stroke-width="2.5"/>
+  </g>
+  <circle cx="350" cy="200" r="90" fill="#0f2036" stroke="#24486a" stroke-width="2"/>
+  <text x="350" y="180" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">MEL</text>
+  <text x="350" y="204" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#8fb8a3" letter-spacing="0.5">MONITORING</text>
+  <text x="350" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#8fb8a3" letter-spacing="0.5">EVALUATION</text>
+  <text x="350" y="236" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#8fb8a3" letter-spacing="0.5">&amp; LEARNING</text>
+    <text x="418.5" y="77.4" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff"><tspan x="418.5" dy="0">Theory of</tspan><tspan x="418.5" dy="16">Change</tspan></text>
+    <text x="407.0" y="105.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" opacity="0.9">1</text>
+    <text x="487.0" y="196.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff"><tspan x="487.0" dy="0">Indicators &amp;</tspan><tspan x="487.0" dy="16">Baseline</tspan></text>
+    <text x="464.0" y="204.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" opacity="0.9">2</text>
+    <text x="418.5" y="314.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff"><tspan x="418.5" dy="0">Collect</tspan><tspan x="418.5" dy="16">Quality Data</tspan></text>
+    <text x="407.0" y="302.7" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" opacity="0.9">3</text>
+    <text x="281.5" y="314.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff"><tspan x="281.5" dy="0">Reproducible</tspan><tspan x="281.5" dy="16">Analysis</tspan></text>
+    <text x="293.0" y="302.7" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" opacity="0.9">4</text>
+    <text x="213.0" y="196.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff"><tspan x="213.0" dy="0">Reflect</tspan><tspan x="213.0" dy="16">&amp; Learn</tspan></text>
+    <text x="236.0" y="204.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" opacity="0.9">5</text>
+    <text x="281.5" y="77.4" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0d1f30"><tspan x="281.5" dy="0">Adapt</tspan><tspan x="281.5" dy="16">&amp; Decide</tspan></text>
+    <text x="293.0" y="105.3" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#0d1f30" opacity="0.9">6</text>
+</svg>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Jarian Permana - Data Scientist & Conservation Ecologist. 10+ years experience in biodiversity, ecology, spatial analysis, and reproducible science.">
+    <meta name="description" content="Jarian Permana - Data Scientist & Conservation Ecologist. 10+ years experience in biodiversity, ecology, spatial analysis, and climate adaptation.">
     <meta name="author" content="Jarian Permana">
     <title>Jarian Permana | Data Scientist & Ecological Conservation</title>
     
@@ -541,6 +541,177 @@
         hr {
             margin: 1rem 0;
         }
+
+        /* ===== Career highlights strip ===== */
+        .career-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.9rem;
+            margin: 0.5rem 0 1.8rem;
+        }
+        .highlight-stat {
+            background: #ffffff;
+            border: 1px solid #eef2f8;
+            border-top: 3px solid #2c7a4d;
+            border-radius: 12px;
+            padding: 1rem 1rem 0.9rem;
+            text-align: center;
+            box-shadow: 0 6px 18px -14px rgba(0,0,0,0.2);
+        }
+        body.dark .highlight-stat {
+            background: #14202e;
+            border-color: #223244;
+            border-top-color: #4a9e6e;
+        }
+        .highlight-stat .num {
+            display: block;
+            font-size: 1.7rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #1f5e46;
+        }
+        body.dark .highlight-stat .num {
+            color: #7fcfb0;
+        }
+        .highlight-stat .lbl {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #52796f;
+            margin-top: 0.35rem;
+            line-height: 1.35;
+        }
+        body.dark .highlight-stat .lbl {
+            color: #9fb8c9;
+        }
+
+        /* ===== Professional Experience timeline ===== */
+        .experience-timeline {
+            margin: 1rem 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+        .exp-item {
+            position: relative;
+            padding: 1.3rem 1.5rem;
+            background: #ffffff;
+            border: 1px solid #eef2f8;
+            border-left: 4px solid #2c7a4d;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px -12px rgba(0,0,0,0.15);
+        }
+        body.dark .exp-item {
+            background: #14202e;
+            border-color: #223244;
+            border-left-color: #4a9e6e;
+        }
+        .exp-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.3rem 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .exp-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1f5e46;
+            margin: 0;
+        }
+        body.dark .exp-role {
+            color: #7fcfb0;
+        }
+        .exp-period {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #52796f;
+            white-space: nowrap;
+            background: #eef5f0;
+            padding: 0.18rem 0.7rem;
+            border-radius: 40px;
+        }
+        body.dark .exp-period {
+            color: #bbd7c5;
+            background: #1e2a3a;
+        }
+        .exp-org {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-style: italic;
+            color: #52796f;
+            margin-bottom: 0.6rem;
+        }
+        body.dark .exp-org {
+            color: #9fb8c9;
+        }
+        .exp-list {
+            margin: 0.4rem 0 0 1.1rem;
+            padding: 0;
+        }
+        .exp-list li {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        /* ===== Part-time Consulting block (visually distinct) ===== */
+        .consulting-note {
+            font-size: 0.9rem;
+            color: #7a6320;
+            background: #fdf6e3;
+            border: 1px solid #f0e2b8;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 0.2rem 0 1.2rem;
+        }
+        body.dark .consulting-note {
+            color: #e9c46a;
+            background: #2a2410;
+            border-color: #4a3f18;
+        }
+        .exp-item.consulting {
+            border-left-color: #e9c46a;
+        }
+        body.dark .exp-item.consulting {
+            border-left-color: #e9c46a;
+        }
+        .exp-item.consulting .exp-role {
+            color: #a9821f;
+        }
+        body.dark .exp-item.consulting .exp-role {
+            color: #e9c46a;
+        }
+        .exp-item.consulting .exp-period {
+            background: #fbefce;
+            color: #8a6d1a;
+        }
+        body.dark .exp-item.consulting .exp-period {
+            background: #3a3113;
+            color: #e9c46a;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.7rem;
+        }
+        .project-tags span {
+            background: #fbefce;
+            color: #7a6320;
+            padding: 0.32rem 0.85rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #f0e2b8;
+        }
+        body.dark .project-tags span {
+            background: #2a2410;
+            color: #e9c46a;
+            border-color: #4a3f18;
+        }
     </style>
 </head>
 <body class="dark">  <!-- PERUBAHAN: Tambahkan class="dark" untuk langsung dark mode -->
@@ -551,7 +722,7 @@
 
 <header>
     <nav>
-        <div class="logo"><a href="about.html">🌿 Jarian Permana | Data & Ecological Conservation</a></div>
+        <div class="logo"><a href="about.html">Jarian Permana | Data & Ecological Conservation</a></div>
         <ul class="nav-links">
             <li><a href="index.html">Projects</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -571,7 +742,7 @@
     <section class="about-hero" style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(44, 110, 73, 0.1)), url('assets/images/about_background.JPG'); background-size: cover; background-position: center;">
         <div class="container">
             <h1>About Me</h1>
-            <p>Data Scientist · Biodiversity · Open Science & Reproducible Research</p>
+            <p>Data Scientist · Biodiversity · Ecology and Conservation Science</p>
         </div>
     </section>
 
@@ -580,11 +751,113 @@
             <!-- Left: main content -->
             <div class="about-text">
                 <h2>Background</h2>
-                <p>Dedicated conservation professional with 10+ years of working experience with leading NGOs and cross-disciplinary teams in science and conservation action. Expertise includes orangutan habitat management, marine conservation, spatial planning, and community-based initiatives throughout Indonesia. Proven ability to deliver scientific research, engage diverse stakeholders, and implement innovative conservation technologies.</p>
-                
+                <p>Conservation professional and <strong>ecologist</strong> with 10+ years bridging <strong>data science and climate &amp; conservation strategy</strong> across leading NGOs, research institutions, and impact-finance consulting throughout Indonesia. Alongside orangutan and tiger habitat management, marine and terrestrial biodiversity assessment, and spatial planning, a growing part of my work now sits at the intersection of <strong>biodiversity and climate action</strong>. I have co-authored a carbon Project Design Document (PDD), designed forest-restoration programs for carbon sequestration under the Ten Golden Rules for Reforestation, and provided independent verification and monitoring for forest-carbon and biodiversity projects under the VCS Program. I build reproducible data pipelines in R and Python, engage diverse stakeholders from villages to donors, and translate ecological and carbon evidence into decisions that work both on the ground and in the boardroom.</p>
+
+                <h2>Professional Experience</h2>
+                <div class="career-highlights">
+                    <div class="highlight-stat"><span class="num">10+</span><span class="lbl">Years across NGOs, research &amp; consulting</span></div>
+                    <div class="highlight-stat"><span class="num">5</span><span class="lbl">Books &amp; technical guides authored</span></div>
+                    <div class="highlight-stat"><span class="num">3</span><span class="lbl">International conferences (ATBC, APCRS, AEFS)</span></div>
+                    <div class="highlight-stat"><span class="num">6+</span><span class="lbl">Training programs led for agencies, universities &amp; industry</span></div>
+                    <div class="highlight-stat"><span class="num">14</span><span class="lbl">Village Forests legally established</span></div>
+                    <div class="highlight-stat"><span class="num">55%</span><span class="lbl">Reduction in forest crime achieved</span></div>
+                </div>
+                <div class="experience-timeline">
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Biodiversity Officer</h3>
+                            <span class="exp-period">Jul 2022 – Jun 2026</span>
+                        </div>
+                        <span class="exp-org">Fauna &amp; Flora Indonesia Programme</span>
+                        <ul class="exp-list">
+                            <li>Spearheaded ecological management across priority landscapes in West Kalimantan, delivering integrated terrestrial and seascape habitat assessments (HCV–HCS, STAR Metric, PVA).</li>
+                            <li>Improved protection of Gunung Palung National Park and adjacent village forests, achieving a 55% reduction in forest crimes vs. the 2020 baseline, a 12.6% increase in the Bornean orangutan population, and an METT score of 80.49%.</li>
+                            <li>Facilitated the establishment of fourteen Village Forests across the Schwaner and Karimata landscapes, all granted official management permits by the Ministry of Environment and Forestry.</li>
+                            <li>Pioneered a Citizen Science monitoring program in Karimata Islands Nature Reserve (METT score +12.5%) and strengthened multi-stakeholder wildlife protection adjacent to Muara Kendawangan Nature Reserve (METT score +6%).</li>
+                            <li>Conducted a High Value Conservation (HVC) assessment for the Arabella–Schwaner Landscape using the HCV–HCS approach, STAR Metric, and COLA landscape modelling, complemented by a Population Viability Assessment (PVA).</li>
+                            <li>Led the design and implementation of village forest restoration programs grounded in the Ten Golden Rules for Reforestation, balancing carbon sequestration, biodiversity, and livelihoods, with two village forests implemented and 20 more designed to scale the effort.</li>
+                            <li>Co-developed and rolled out the SMART conservation data management system for multiple stakeholders (BKSDA and DLHK West Kalimantan, Village Forest management units), and co-authored the Project Design Document (PDD) for a West Kalimantan climate project.</li>
+                            <li>Built and automated a large-scale biodiversity database (camera trap, SMART, orangutan/gibbon surveys) in R, and led MEL and donor reporting for Darwin Initiative, Arcadia, Halcyon, and Rainforest Trust.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Camera Trap Leader</h3>
+                            <span class="exp-period">2020 – 2022</span>
+                        </div>
+                        <span class="exp-org">Fauna &amp; Flora Indonesia Programme</span>
+                        <ul class="exp-list">
+                            <li>Led a large-scale camera-trap survey of 100 units across 91 plots on a 2×2 km grid in the Riau Ecosystem Restoration Area.</li>
+                            <li>Documented 23 species, including the critically endangered Sumatran tiger, pangolin, and clouded leopard.</li>
+                            <li>Built a MaxEnt habitat suitability model estimating 44.16% tiger occupancy, directly informing landscape-level protection priorities.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Spatial and Data Analyst Officer</h3>
+                            <span class="exp-period">2019 – 2020</span>
+                        </div>
+                        <span class="exp-org">Amfibi Reptil Sumatra</span>
+                        <ul class="exp-list">
+                            <li>Led herpetofauna field expeditions across Java (Ujung Kulon, Gunung Gede Pangrango, Leuweung Sancang, Gunung Slamet), including the first field expedition to record the Gunung Slamet tree frog that was later described by other researchers as a species new to science, <em>Zhangixalus faritsalhadii</em>.</li>
+                            <li>Built a comprehensive herpetofauna database from field surveys and systematic literature review, serving as the scientific foundation for two published field guides.</li>
+                            <li>Authored two published books, <em>Amfibi di Pulau Jawa</em> and <em>Amfibi di Taman Nasional Batang Gadis</em>, now used as national biodiversity reference materials.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Facilitator &amp; Mapping of Cocoa Farmers</h3>
+                            <span class="exp-period">2019</span>
+                        </div>
+                        <span class="exp-org">USAID – Lestari</span>
+                        <ul class="exp-list">
+                            <li>Designed spatial-based fieldwork SOPs that standardized data collection across land rehabilitation projects in Aceh and North Sumatra.</li>
+                            <li>Analyzed cocoa production systems by linking tree population, land area, and yield, informing sustainable financing models and market-access strategies for smallholder farmers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Community Development Facilitator</h3>
+                            <span class="exp-period">2015 – 2017</span>
+                        </div>
+                        <span class="exp-org">Pesona Tropis Alam Indonesia (PETAI)</span>
+                        <ul class="exp-list">
+                            <li>Secured Social Forestry (HKm) permits for three villages in Pakpak Bharat, North Sumatra, personally guiding farmer groups through the full submission process to the Ministry of Environment and Forestry.</li>
+                            <li>Developed organic farming and market-analysis initiatives as alternative livelihoods, strengthening the link between community wellbeing and forest protection.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Part-time Consulting</h2>
+                <p class="consulting-note"><i class="fas fa-info-circle"></i> Engagements held concurrently with my primary role, as an independent paid technical expert (<em>tenaga ahli</em>).</p>
+                <div class="experience-timeline">
+                    <div class="exp-item consulting">
+                        <div class="exp-head">
+                            <h3 class="exp-role">Biodiversity &amp; MEL Specialist</h3>
+                            <span class="exp-period">Oct 2025 – Present</span>
+                        </div>
+                        <span class="exp-org">PT Terra Equity Impact</span>
+                        <ul class="exp-list">
+                            <li>Engaged as an independent paid specialist providing biodiversity assessment and Monitoring, Evaluation &amp; Learning (MEL) support for forest-carbon and biodiversity investment projects.</li>
+                            <li>Assessed forest eligibility against internationally accepted definitions (UNFCCC, FAO, and IPCC), covering thresholds such as minimum forest area, tree height, and crown cover across mature, secondary, degraded, and wetland forests.</li>
+                            <li>Contributed to the verification and monitoring of forest-carbon projects spanning REDD (reduced emissions from deforestation and forest degradation), ARR (afforestation, reforestation and revegetation), and IFM (improved forest management) activities under the VCS Program.</li>
+                            <li>Produced biodiversity monitoring reports and MEL evidence for the BKT Bahenap VF, AHI Mentari Huluan Jambi, and KBCF Himba Lestari projects, turning field data into standard and investor-ready documentation.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span>BKT Bahenap VF Projects - Verification Report</span>
+                            <span>AHI Mentari Huluan Jambi - Monitoring Report</span>
+                            <span>KBCF Himba Lestari - Monitoring Report</span>
+                        </div>
+                    </div>
+                </div>
+
                 <h2>Education</h2>
                 <ul>
-                    <li><strong>2019</strong> — Bachelor of Forestry, University of Sumatera Utara</li>
+                    <li><strong>2019</strong> - Bachelor of Forestry, University of Sumatera Utara</li>
                 </ul>
                 
                 <h2>Technical & Analytical Expertise</h2>
@@ -663,7 +936,7 @@
                         </a>
                     </div>
                     <p style="font-size: 0.7rem; text-align: center; margin-top: 12px; color: #6c7a89;">
-                        <i class="fas fa-info-circle"></i> CV updated March 2026 — includes publication list & references
+                        <i class="fas fa-info-circle"></i> CV updated March 2026 - includes publication list & references
                     </p>
                 </div>
             </div>
@@ -676,21 +949,21 @@
             <h2 style="font-size: 2rem; font-weight: 600;">My Scientific & Open Science Values</h2>
             <div class="values-quote">
                 <i class="fas fa-quote-left"></i>
-                <p>Transparency is the bedrock of reproducible science. I advocate for clear workflows — from study design and data acquisition to analytical pipelines and final publication — enabling genuine scrutiny and reuse.</p>
-                <cite style="display: block; margin-top: 0.8rem;">— Jarian Permana</cite>
+                <p>Transparency is the bedrock of reproducible science. I advocate for clear workflows - from study design and data acquisition to analytical pipelines and final publication - enabling genuine scrutiny and reuse.</p>
+                <cite style="display: block; margin-top: 0.8rem;">- Jarian Permana</cite>
             </div>
             <div class="values-principles">
                 <div class="principle">
-                    <h3>🔓 Open by Default</h3>
-                    <p>All analytical code, derived data, and methodological documentation are shared under permissive licenses (MIT / CC-BY). Exceptions only for sensitive species locations.</p>
+                    <h3>📐 Rigorous &amp; Honest Methods</h3>
+                    <p>Selecting the most suitable statistical &amp; ecological approach, quantifying uncertainty, and being explicit about limitations as well as strengths, using reproducible and openly documented workflows in R and Python.</p>
                 </div>
                 <div class="principle">
-                    <h3>📐 Robust Methods</h3>
-                    <p>Selecting the most suitable statistical & ecological approach with transparent uncertainty quantification and validation, respecting both power and limitations.</p>
+                    <h3>🔬 Evidence into Action</h3>
+                    <p>Analysis exists to drive real conservation and investment decisions, not just academic output: METT scoring, PVA, habitat modelling, and MEL frameworks. Sensitive species locations are always protected.</p>
                 </div>
                 <div class="principle">
-                    <h3>🤝 Collaborative & FAIR</h3>
-                    <p>Active contribution to open-source projects, peer-review of methods, and welcoming issues/pull requests on GitHub to strengthen conservation data science.</p>
+                    <h3>🤝 Grounded in Field &amp; Community</h3>
+                    <p>Data grounded in real fieldwork and built through collaboration with local communities, government agencies (BKSDA, DLHK), and donors, because durable conservation is built with people, not just for them.</p>
                 </div>
             </div>
         </div>
@@ -700,7 +973,7 @@
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h4>🌿 Jarian Permana</h4>
+            <h4>Jarian Permana</h4>
             <p>Data Scientist · Conservation Ecologist<br>Fauna & Flora Indonesia Programme</p>
         </div>
         <div class="footer-section">
@@ -723,7 +996,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2026 Jarian Permana — Fauna & Flora | Built for science & global conservation impact</p>
+        <p>© 2026 Jarian Permana - Fauna & Flora | Built for science & global conservation impact</p>
     </div>
 </footer>
 
@@ -870,7 +1143,7 @@
         });
     }
 
-    console.log("Professional about page ready — global standards");
+    console.log("Professional about page ready - global standards");
 </script>
 </body>
 </html>
