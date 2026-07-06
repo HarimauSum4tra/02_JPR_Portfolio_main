@@ -246,6 +246,18 @@
             outline: none;
             border-color: var(--primary);
         }
+
+        /* Form text follows the active theme: light in dark mode, dark in light mode */
+        .form-group label,
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            color: var(--text-dark);
+        }
+        body.dark-mode .form-group input::placeholder,
+        body.dark-mode .form-group textarea::placeholder {
+            color: #8a93a8;
+        }
         
         .checkbox-label {
             display: flex;
