@@ -1,0 +1,17 @@
+reporting_period,observation_date,site,indicator,result_level,unit,value,target,source,qa_status
+2026-Q1,2026-01-15,Block A,patrol_days,output,days,24,20,SMART,verified
+2026-Q1,2026-01-15,Block A,patrol_coverage,outcome,proportion,0.82,0.85,SMART spatial,verified
+2026-Q1,2026-01-15,Block A,threat_incidents,outcome,count,7,6,SMART,verified
+2026-Q1,2026-01-20,Block A,community_meetings,output,count,3,2,Meeting log,verified
+2026-Q1,2026-01-16,Block B,patrol_days,output,days,21,20,SMART,verified
+2026-Q1,2026-01-16,Block B,patrol_coverage,outcome,proportion,0.88,0.85,SMART spatial,verified
+2026-Q1,2026-01-16,Block B,threat_incidents,outcome,count,4,6,SMART,verified
+2026-Q1,2026-01-22,Block B,community_meetings,output,count,2,2,Meeting log,verified
+2026-Q1,2026-01-17,Block C,patrol_days,output,days,18,20,SMART,provisional
+2026-Q1,2026-01-17,Block C,patrol_coverage,outcome,proportion,0.76,0.85,SMART spatial,verified
+2026-Q1,2026-01-17,Block C,threat_incidents,outcome,count,5,6,SMART,verified
+2026-Q1,2026-01-24,Block C,community_meetings,output,count,1,2,Meeting log,verified
+2025-Q4,2025-10-15,Block A,patrol_coverage,outcome,proportion,0.79,0.85,SMART spatial,verified
+2025-Q4,2025-10-15,Block A,threat_incidents,outcome,count,8,6,SMART,verified
+2025-Q4,2025-10-16,Block B,patrol_coverage,outcome,proportion,0.84,0.85,SMART spatial,verified
+2025-Q4,2025-10-16,Block B,threat_incidents,outcome,count,5,6,SMART,verified

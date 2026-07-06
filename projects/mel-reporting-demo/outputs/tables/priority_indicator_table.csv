@@ -1,0 +1,12 @@
+reporting_period,site,indicator,result_level,unit,value,target,performance_ratio,performance_status
+2026-Q1,Block A,community_meetings,output,count,3,2,1.5,on_track
+2026-Q1,Block B,community_meetings,output,count,2,2,1,on_track
+2026-Q1,Block C,community_meetings,output,count,1,2,0.5,off_track
+2026-Q1,Block A,patrol_coverage,outcome,proportion,0.82,0.85,0.9647058823529412,watch
+2026-Q1,Block B,patrol_coverage,outcome,proportion,0.88,0.85,1.035294117647059,on_track
+2026-Q1,Block C,patrol_coverage,outcome,proportion,0.76,0.85,0.8941176470588236,watch
+2026-Q1,Block A,patrol_days,output,days,24,20,1.2,on_track
+2026-Q1,Block B,patrol_days,output,days,21,20,1.05,on_track
+2026-Q1,Block A,threat_incidents,outcome,count,7,6,1.1666666666666667,on_track
+2026-Q1,Block B,threat_incidents,outcome,count,4,6,0.6666666666666666,off_track
+2026-Q1,Block C,threat_incidents,outcome,count,5,6,0.8333333333333334,watch

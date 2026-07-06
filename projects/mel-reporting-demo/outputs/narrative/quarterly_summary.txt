@@ -1,0 +1,7 @@
+Quarterly MEL summary for 2026-Q1
+4 indicators were reported across 3 sites in 2026-Q1. 6 indicator-site results were on track, 3 were in a watch zone, and 2 were off track.
+Sites with the highest share of off-track indicators were: Block C, Block B, Block A. These sites should be prioritized for a management review.
+Priority findings:
+- Block B: threat_incidents reached 4 against a target of 6 (off_track).
+- Block C: community_meetings reached 1 against a target of 2 (off_track).
+- Block C: threat_incidents reached 5 against a target of 6 (watch).
