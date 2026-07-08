@@ -1,4 +1,4 @@
-# 🌿 Data Science Portfolio - [Nama Anda]
+# Data Science & Ecologist Conservation Portfolio - Jarian Permana
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)](https://JarianPermana.github.io/02_JPR_Portfolio_main/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
