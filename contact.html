@@ -405,7 +405,7 @@
                 const data = Object.fromEntries(formData);
                 
                 try {
-                    if (WEB3FORMS_ACCESS_KEY === '94704998-f472-4c5a-82ac-55a8e57918f4') {
+                    if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.startsWith('YOUR_')) {
                         throw new Error('Web3Forms access key belum dipasang');
                     }
 
